@@ -7,6 +7,7 @@
 <style>
 :root { color-scheme: light; --ink:#17201b; --muted:#5f6d66; --line:#dce4df; --bg:#f7faf8; --panel:#ffffff; --toward:#1d8f5a; --watch:#f1c453; --away:#cf4b43; }
 * { box-sizing:border-box; }
+html, body { max-width:100%; overflow-x:hidden; }
 body { margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial, sans-serif; color:var(--ink); background:var(--bg); line-height:1.45; }
 main { max-width:1380px; margin:0 auto; padding:28px 18px 48px; }
 header { display:grid; grid-template-columns:1.25fr .75fr; gap:20px; align-items:end; margin-bottom:18px; }
@@ -36,10 +37,10 @@ path.away { fill:var(--away); }
 .watch.dot,.pill.watch { background:var(--watch); color:#312600; }
 .away.dot,.pill.away { background:var(--away); color:white; }
 .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; font-size:14px; }
+table { width:100%; table-layout:auto; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden; font-size:14px; }
 th,td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
 th { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.02em; background:#f0f5f2; }
-td:nth-child(4),td:nth-child(5),td:nth-child(6),td:nth-child(7),td:nth-child(8),td:nth-child(9) { text-align:right; white-space:nowrap; }
+td:nth-child(2),td:nth-child(3),td:nth-child(4),td:nth-child(5),td:nth-child(6),td:nth-child(7) { text-align:right; white-space:nowrap; }
 .pill { display:inline-block; border-radius:999px; padding:3px 8px; font-size:12px; font-weight:700; white-space:nowrap; }
 .zonebox { background:#fff; border:1px solid var(--line); border-radius:8px; padding:14px; min-height:220px; position:sticky; top:10px; }
 .zonebox .big { font-size:24px; font-weight:850; line-height:1.1; margin:8px 0; }
@@ -358,37 +359,37 @@ footer { margin-top:24px; color:var(--muted); font-size:13px; }
 <div>
 <h2>Move scooters toward these areas first</h2>
 <p class="note">These zones have less scooter time than their May trip demand suggests. Add count is gap-hours divided by 24, rounded to scooters.</p>
-<table><thead><tr><th>Zone</th><th>Ward</th><th>Class</th><th>Avg scooters</th><th>Add scooters</th><th>Remove scooters</th><th>Vehicle-hours/day</th><th>Gap/day</th><th>Observed trips</th><th>Action</th></tr></thead><tbody>
-<tr><td>Zone 141 - WARD 3 - MEDIUM</td><td>WARD 3</td><td>MEDIUM</td><td>19.7</td><td>5</td><td></td><td>473.9</td><td>127.0</td><td>2,568</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 62 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>1.2</td><td>5</td><td></td><td>27.8</td><td>122.2</td><td>92</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 81 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>0.4</td><td>3</td><td></td><td>8.8</td><td>78.8</td><td>49</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 149 - WARD 3 - MEDIUM</td><td>WARD 3</td><td>MEDIUM</td><td>0.7</td><td>3</td><td></td><td>17.3</td><td>78.2</td><td>49</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 165 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>0.9</td><td>3</td><td></td><td>22.5</td><td>74.6</td><td>50</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 236 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>3.6</td><td>2</td><td></td><td>87.0</td><td>51.9</td><td>213</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 104 - WARD 3 - MEDIUM</td><td>WARD 3</td><td>MEDIUM</td><td>0.3</td><td>2</td><td></td><td>7.4</td><td>46.5</td><td>21</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 16 - Target Zone 1 North East - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>0.2</td><td>2</td><td></td><td>4.4</td><td>45.6</td><td>20</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 61 - WARD 3 - MEDIUM</td><td>WARD 3</td><td>MEDIUM</td><td>0.2</td><td>2</td><td></td><td>4.3</td><td>40.1</td><td>15</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 89 - WARD 1 - MEDIUM</td><td>WARD 1</td><td>MEDIUM</td><td>0.2</td><td>2</td><td></td><td>4.9</td><td>39.9</td><td>17</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 100 - WARD 5 - MEDIUM</td><td>WARD 5</td><td>MEDIUM</td><td>0.3</td><td>2</td><td></td><td>6.6</td><td>39.8</td><td>23</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 213 - Target Zone 1 North East - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>0.0</td><td>2</td><td></td><td>0.2</td><td>38.7</td><td>1</td><td><span class='pill toward'>toward</span></td></tr>
+<table><thead><tr><th>Zone</th><th>Avg scooters</th><th>Add scooters</th><th>Remove scooters</th><th>Vehicle-hours/day</th><th>Gap/day</th><th>Observed trips</th><th>Action</th></tr></thead><tbody>
+<tr><td>Zone 141 - WARD 3 - MEDIUM</td><td>19.7</td><td>5</td><td></td><td>473.9</td><td>127.0</td><td>2,568</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 62 - WARD 4 - HIGH</td><td>1.2</td><td>5</td><td></td><td>27.8</td><td>122.2</td><td>92</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 81 - WARD 6 - HIGH</td><td>0.4</td><td>3</td><td></td><td>8.8</td><td>78.8</td><td>49</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 149 - WARD 3 - MEDIUM</td><td>0.7</td><td>3</td><td></td><td>17.3</td><td>78.2</td><td>49</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 165 - WARD 4 - HIGH</td><td>0.9</td><td>3</td><td></td><td>22.5</td><td>74.6</td><td>50</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 236 - WARD 3 - LOW</td><td>3.6</td><td>2</td><td></td><td>87.0</td><td>51.9</td><td>213</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 104 - WARD 3 - MEDIUM</td><td>0.3</td><td>2</td><td></td><td>7.4</td><td>46.5</td><td>21</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 16 - Target Zone 1 North East - WARD 10 - HIGH</td><td>0.2</td><td>2</td><td></td><td>4.4</td><td>45.6</td><td>20</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 61 - WARD 3 - MEDIUM</td><td>0.2</td><td>2</td><td></td><td>4.3</td><td>40.1</td><td>15</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 89 - WARD 1 - MEDIUM</td><td>0.2</td><td>2</td><td></td><td>4.9</td><td>39.9</td><td>17</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 100 - WARD 5 - MEDIUM</td><td>0.3</td><td>2</td><td></td><td>6.6</td><td>39.8</td><td>23</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 213 - Target Zone 1 North East - WARD 10 - HIGH</td><td>0.0</td><td>2</td><td></td><td>0.2</td><td>38.7</td><td>1</td><td><span class='pill toward'>toward</span></td></tr>
 </tbody></table>
 </div>
 <div>
 <h2>Consider moving scooters away from these areas</h2>
 <p class="note">These zones have more scooter time than their May trip demand suggests. Remove count is gap-hours divided by 24, capped by average scooters present.</p>
-<table><thead><tr><th>Zone</th><th>Ward</th><th>Class</th><th>Avg scooters</th><th>Add scooters</th><th>Remove scooters</th><th>Vehicle-hours/day</th><th>Gap/day</th><th>Observed trips</th><th>Action</th></tr></thead><tbody>
-<tr><td>Zone 217 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>8.4</td><td></td><td>6</td><td>201.5</td><td>-146.0</td><td>817</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 242 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>5.2</td><td></td><td>5</td><td>125.4</td><td>-121.2</td><td>774</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 208 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>8.0</td><td></td><td>5</td><td>191.2</td><td>-114.9</td><td>248</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 146 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>8.3</td><td></td><td>4</td><td>199.7</td><td>-106.2</td><td>421</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 22 - WARD 9 - HIGH</td><td>WARD 9</td><td>HIGH</td><td>4.8</td><td></td><td>4</td><td>114.5</td><td>-86.0</td><td>356</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 185 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>5.1</td><td></td><td>3</td><td>121.8</td><td>-81.2</td><td>371</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 152 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>4.8</td><td></td><td>3</td><td>114.4</td><td>-73.8</td><td>279</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 133 - WARD 9 - HIGH</td><td>WARD 9</td><td>HIGH</td><td>6.6</td><td></td><td>3</td><td>159.5</td><td>-60.5</td><td>357</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 160 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>3.8</td><td></td><td>2</td><td>92.1</td><td>-55.8</td><td>113</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 187 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>3.7</td><td></td><td>2</td><td>87.7</td><td>-55.6</td><td>257</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 244 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>9.4</td><td></td><td>2</td><td>226.4</td><td>-49.1</td><td>628</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 14 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>3.2</td><td></td><td>2</td><td>75.9</td><td>-48.3</td><td>125</td><td><span class='pill away'>away</span></td></tr>
+<table><thead><tr><th>Zone</th><th>Avg scooters</th><th>Add scooters</th><th>Remove scooters</th><th>Vehicle-hours/day</th><th>Gap/day</th><th>Observed trips</th><th>Action</th></tr></thead><tbody>
+<tr><td>Zone 217 - WARD 10 - HIGH</td><td>8.4</td><td></td><td>6</td><td>201.5</td><td>-146.0</td><td>817</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 242 - WARD 3 - LOW</td><td>5.2</td><td></td><td>5</td><td>125.4</td><td>-121.2</td><td>774</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 208 - WARD 4 - HIGH</td><td>8.0</td><td></td><td>5</td><td>191.2</td><td>-114.9</td><td>248</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 146 - WARD 10 - HIGH</td><td>8.3</td><td></td><td>4</td><td>199.7</td><td>-106.2</td><td>421</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 22 - WARD 9 - HIGH</td><td>4.8</td><td></td><td>4</td><td>114.5</td><td>-86.0</td><td>356</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 185 - WARD 10 - HIGH</td><td>5.1</td><td></td><td>3</td><td>121.8</td><td>-81.2</td><td>371</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 152 - WARD 10 - HIGH</td><td>4.8</td><td></td><td>3</td><td>114.4</td><td>-73.8</td><td>279</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 133 - WARD 9 - HIGH</td><td>6.6</td><td></td><td>3</td><td>159.5</td><td>-60.5</td><td>357</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 160 - WARD 10 - MEDIUM</td><td>3.8</td><td></td><td>2</td><td>92.1</td><td>-55.8</td><td>113</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 187 - WARD 10 - MEDIUM</td><td>3.7</td><td></td><td>2</td><td>87.7</td><td>-55.6</td><td>257</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 244 - WARD 6 - MEDIUM</td><td>9.4</td><td></td><td>2</td><td>226.4</td><td>-49.1</td><td>628</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 14 - WARD 8 - MEDIUM</td><td>3.2</td><td></td><td>2</td><td>75.9</td><td>-48.3</td><td>125</td><td><span class='pill away'>away</span></td></tr>
 </tbody></table>
 </div>
 </section>
@@ -396,31 +397,31 @@ footer { margin-top:24px; color:var(--muted); font-size:13px; }
 <section>
 <h2>Estimated revenue by area</h2>
 <p class="note">This uses the full months we can cleanly support right now: May and June. Stripe gives us monthly net revenue totals, but the saved Stripe file does not include exact payment GPS. So the area split uses each zone's share of observed trip starts. Simple English: if a zone had 5% of May trips, it gets about 5% of May revenue.</p>
-<table><thead><tr><th>Zone</th><th>Ward</th><th>Class</th><th>May-June est. revenue</th><th>May</th><th>June</th><th>May-June trips</th></tr></thead><tbody>
-<tr><td>Zone 141 - WARD 3 - MEDIUM</td><td>WARD 3</td><td>MEDIUM</td><td>$16,974</td><td>$6,797</td><td>$10,177</td><td>1,367</td></tr>
-<tr><td>Zone 241 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>$13,826</td><td>$6,081</td><td>$7,746</td><td>1,124</td></tr>
-<tr><td>Zone 217 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>$5,893</td><td>$2,226</td><td>$3,667</td><td>472</td></tr>
-<tr><td>Zone 74 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>$5,865</td><td>$2,280</td><td>$3,584</td><td>471</td></tr>
-<tr><td>Zone 244 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>$4,133</td><td>$1,716</td><td>$2,417</td><td>334</td></tr>
-<tr><td>Zone 242 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>$4,094</td><td>$1,292</td><td>$2,802</td><td>323</td></tr>
-<tr><td>Zone 185 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>$3,263</td><td>$1,629</td><td>$1,634</td><td>269</td></tr>
-<tr><td>Zone 68 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>$2,814</td><td>$1,042</td><td>$1,772</td><td>225</td></tr>
-<tr><td>Zone 146 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>$2,632</td><td>$1,108</td><td>$1,524</td><td>213</td></tr>
-<tr><td>Zone 133 - WARD 9 - HIGH</td><td>WARD 9</td><td>HIGH</td><td>$2,544</td><td>$1,129</td><td>$1,415</td><td>207</td></tr>
-<tr><td>Zone 238 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>$2,450</td><td>$1,379</td><td>$1,071</td><td>205</td></tr>
-<tr><td>Zone 22 - WARD 9 - HIGH</td><td>WARD 9</td><td>HIGH</td><td>$2,319</td><td>$836</td><td>$1,483</td><td>185</td></tr>
-<tr><td>Zone 208 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>$1,710</td><td>$597</td><td>$1,112</td><td>136</td></tr>
-<tr><td>Zone 6 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>$1,701</td><td>$369</td><td>$1,332</td><td>131</td></tr>
-<tr><td>Zone 152 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>$1,674</td><td>$369</td><td>$1,305</td><td>129</td></tr>
-<tr><td>Zone 226 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>$1,579</td><td>$728</td><td>$851</td><td>129</td></tr>
-<tr><td>Zone 187 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>$1,503</td><td>$652</td><td>$851</td><td>122</td></tr>
-<tr><td>Zone 99 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>$1,491</td><td>$695</td><td>$797</td><td>122</td></tr>
-<tr><td>Zone 237 - WARD 8 - HIGH</td><td>WARD 8</td><td>HIGH</td><td>$1,478</td><td>$641</td><td>$838</td><td>120</td></tr>
-<tr><td>Zone 191 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>$1,456</td><td>$673</td><td>$783</td><td>119</td></tr>
-<tr><td>Zone 239 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>$1,441</td><td>$521</td><td>$920</td><td>115</td></tr>
-<tr><td>Zone 72 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>$1,354</td><td>$434</td><td>$920</td><td>107</td></tr>
-<tr><td>Zone 49 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>$1,230</td><td>$543</td><td>$687</td><td>100</td></tr>
-<tr><td>Zone 27 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>$1,215</td><td>$391</td><td>$824</td><td>96</td></tr>
+<table><thead><tr><th>Zone</th><th>May-June est. revenue</th><th>May</th><th>June</th><th>May-June trips</th></tr></thead><tbody>
+<tr><td>Zone 141 - WARD 3 - MEDIUM</td><td>$16,974</td><td>$6,797</td><td>$10,177</td><td>1,367</td></tr>
+<tr><td>Zone 241 - WARD 8 - MEDIUM</td><td>$13,826</td><td>$6,081</td><td>$7,746</td><td>1,124</td></tr>
+<tr><td>Zone 217 - WARD 10 - HIGH</td><td>$5,893</td><td>$2,226</td><td>$3,667</td><td>472</td></tr>
+<tr><td>Zone 74 - WARD 6 - MEDIUM</td><td>$5,865</td><td>$2,280</td><td>$3,584</td><td>471</td></tr>
+<tr><td>Zone 244 - WARD 6 - MEDIUM</td><td>$4,133</td><td>$1,716</td><td>$2,417</td><td>334</td></tr>
+<tr><td>Zone 242 - WARD 3 - LOW</td><td>$4,094</td><td>$1,292</td><td>$2,802</td><td>323</td></tr>
+<tr><td>Zone 185 - WARD 10 - HIGH</td><td>$3,263</td><td>$1,629</td><td>$1,634</td><td>269</td></tr>
+<tr><td>Zone 68 - WARD 6 - HIGH</td><td>$2,814</td><td>$1,042</td><td>$1,772</td><td>225</td></tr>
+<tr><td>Zone 146 - WARD 10 - HIGH</td><td>$2,632</td><td>$1,108</td><td>$1,524</td><td>213</td></tr>
+<tr><td>Zone 133 - WARD 9 - HIGH</td><td>$2,544</td><td>$1,129</td><td>$1,415</td><td>207</td></tr>
+<tr><td>Zone 238 - WARD 10 - HIGH</td><td>$2,450</td><td>$1,379</td><td>$1,071</td><td>205</td></tr>
+<tr><td>Zone 22 - WARD 9 - HIGH</td><td>$2,319</td><td>$836</td><td>$1,483</td><td>185</td></tr>
+<tr><td>Zone 208 - WARD 4 - HIGH</td><td>$1,710</td><td>$597</td><td>$1,112</td><td>136</td></tr>
+<tr><td>Zone 6 - WARD 10 - MEDIUM</td><td>$1,701</td><td>$369</td><td>$1,332</td><td>131</td></tr>
+<tr><td>Zone 152 - WARD 10 - HIGH</td><td>$1,674</td><td>$369</td><td>$1,305</td><td>129</td></tr>
+<tr><td>Zone 226 - WARD 6 - HIGH</td><td>$1,579</td><td>$728</td><td>$851</td><td>129</td></tr>
+<tr><td>Zone 187 - WARD 10 - MEDIUM</td><td>$1,503</td><td>$652</td><td>$851</td><td>122</td></tr>
+<tr><td>Zone 99 - WARD 4 - HIGH</td><td>$1,491</td><td>$695</td><td>$797</td><td>122</td></tr>
+<tr><td>Zone 237 - WARD 8 - HIGH</td><td>$1,478</td><td>$641</td><td>$838</td><td>120</td></tr>
+<tr><td>Zone 191 - WARD 6 - HIGH</td><td>$1,456</td><td>$673</td><td>$783</td><td>119</td></tr>
+<tr><td>Zone 239 - WARD 6 - HIGH</td><td>$1,441</td><td>$521</td><td>$920</td><td>115</td></tr>
+<tr><td>Zone 72 - WARD 6 - HIGH</td><td>$1,354</td><td>$434</td><td>$920</td><td>107</td></tr>
+<tr><td>Zone 49 - WARD 6 - MEDIUM</td><td>$1,230</td><td>$543</td><td>$687</td><td>100</td></tr>
+<tr><td>Zone 27 - WARD 6 - HIGH</td><td>$1,215</td><td>$391</td><td>$824</td><td>96</td></tr>
 </tbody></table>
 <p class="note">Revenue source: Stripe primary revenue cache, through 2026-07-21. May-June Stripe net revenue in this file: <b>$124,793</b>. April is not included because the trip window starts April 4. July and August are not included because the local Stripe cache is not a complete full-month revenue set for those months.</p>
 </section>
@@ -432,272 +433,272 @@ footer { margin-top:24px; color:var(--muted); font-size:13px; }
 
 <details>
 <summary>Show all 265 zones</summary>
-<table><thead><tr><th>Zone</th><th>Ward</th><th>Class</th><th>Avg scooters</th><th>Add scooters</th><th>Remove scooters</th><th>Vehicle-hours/day</th><th>Gap/day</th><th>Observed trips</th><th>Action</th></tr></thead><tbody>
-<tr><td>Zone 141 - WARD 3 - MEDIUM</td><td>WARD 3</td><td>MEDIUM</td><td>19.7</td><td>5</td><td></td><td>473.9</td><td>127.0</td><td>2,568</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 62 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>1.2</td><td>5</td><td></td><td>27.8</td><td>122.2</td><td>92</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 81 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>0.4</td><td>3</td><td></td><td>8.8</td><td>78.8</td><td>49</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 149 - WARD 3 - MEDIUM</td><td>WARD 3</td><td>MEDIUM</td><td>0.7</td><td>3</td><td></td><td>17.3</td><td>78.2</td><td>49</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 165 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>0.9</td><td>3</td><td></td><td>22.5</td><td>74.6</td><td>50</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 236 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>3.6</td><td>2</td><td></td><td>87.0</td><td>51.9</td><td>213</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 104 - WARD 3 - MEDIUM</td><td>WARD 3</td><td>MEDIUM</td><td>0.3</td><td>2</td><td></td><td>7.4</td><td>46.5</td><td>21</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 16 - Target Zone 1 North East - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>0.2</td><td>2</td><td></td><td>4.4</td><td>45.6</td><td>20</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 61 - WARD 3 - MEDIUM</td><td>WARD 3</td><td>MEDIUM</td><td>0.2</td><td>2</td><td></td><td>4.3</td><td>40.1</td><td>15</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 89 - WARD 1 - MEDIUM</td><td>WARD 1</td><td>MEDIUM</td><td>0.2</td><td>2</td><td></td><td>4.9</td><td>39.9</td><td>17</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 100 - WARD 5 - MEDIUM</td><td>WARD 5</td><td>MEDIUM</td><td>0.3</td><td>2</td><td></td><td>6.6</td><td>39.8</td><td>23</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 213 - Target Zone 1 North East - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>0.0</td><td>2</td><td></td><td>0.2</td><td>38.7</td><td>1</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 41 - WARD 1 - LOW</td><td>WARD 1</td><td>LOW</td><td>0.2</td><td>2</td><td></td><td>4.7</td><td>38.1</td><td>15</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 52 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>0.9</td><td>2</td><td></td><td>21.2</td><td>37.2</td><td>141</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 139 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>0.5</td><td>1</td><td></td><td>12.2</td><td>33.3</td><td>69</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 128 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.4</td><td>1</td><td></td><td>9.8</td><td>32.1</td><td>33</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 203 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.0</td><td>1</td><td></td><td>0.3</td><td>31.8</td><td>6</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 222 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.4</td><td>1</td><td></td><td>8.6</td><td>31.6</td><td>34</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 123 - WARD 1 - MEDIUM</td><td>WARD 1</td><td>MEDIUM</td><td>0.1</td><td>1</td><td></td><td>2.7</td><td>30.7</td><td>12</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 75 - WARD 1 - MEDIUM</td><td>WARD 1</td><td>MEDIUM</td><td>0.4</td><td>1</td><td></td><td>8.8</td><td>30.5</td><td>16</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 155 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.2</td><td>1</td><td></td><td>4.6</td><td>28.9</td><td>9</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 241 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>14.6</td><td>1</td><td></td><td>350.5</td><td>27.8</td><td>2,050</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 19 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>0.2</td><td>1</td><td></td><td>5.7</td><td>27.4</td><td>23</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 190 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.1</td><td>1</td><td></td><td>1.3</td><td>27.2</td><td>16</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 161 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>1.2</td><td>1</td><td></td><td>28.2</td><td>25.7</td><td>118</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 26 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>0.4</td><td>1</td><td></td><td>10.5</td><td>23.3</td><td>37</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 136 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.3</td><td>1</td><td></td><td>6.6</td><td>23.0</td><td>27</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 25 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.4</td><td>1</td><td></td><td>9.9</td><td>22.6</td><td>58</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 7 - WARD 3 - MEDIUM</td><td>WARD 3</td><td>MEDIUM</td><td>0.1</td><td>1</td><td></td><td>2.8</td><td>22.5</td><td>15</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 131 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>0.9</td><td>1</td><td></td><td>21.0</td><td>21.5</td><td>73</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 63 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.2</td><td>1</td><td></td><td>4.6</td><td>20.7</td><td>19</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 116 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>0.1</td><td>1</td><td></td><td>3.4</td><td>20.0</td><td>9</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 43 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>3.1</td><td>1</td><td></td><td>74.2</td><td>19.6</td><td>183</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 18 - WARD 1 - LOW</td><td>WARD 1</td><td>LOW</td><td>0.5</td><td>1</td><td></td><td>12.7</td><td>19.4</td><td>21</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 48 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>0.0</td><td>1</td><td></td><td>1.1</td><td>18.1</td><td>3</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 154 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.2</td><td>1</td><td></td><td>4.9</td><td>17.8</td><td>11</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 110 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.8</td><td>1</td><td></td><td>19.8</td><td>16.3</td><td>39</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 156 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.1</td><td>1</td><td></td><td>1.9</td><td>15.7</td><td>8</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 34 - WARD 3 - MEDIUM</td><td>WARD 3</td><td>MEDIUM</td><td>0.5</td><td>1</td><td></td><td>11.7</td><td>15.3</td><td>29</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 179 - WARD 5 - LOW</td><td>WARD 5</td><td>LOW</td><td>0.1</td><td>1</td><td></td><td>3.0</td><td>14.2</td><td>12</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 23 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.1</td><td>1</td><td></td><td>2.2</td><td>14.0</td><td>7</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 186 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>0.0</td><td>1</td><td></td><td>0.4</td><td>13.9</td><td>0</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 148 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.1</td><td>1</td><td></td><td>2.6</td><td>13.3</td><td>14</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 198 - WARD 1 - MEDIUM</td><td>WARD 1</td><td>MEDIUM</td><td>0.7</td><td>1</td><td></td><td>16.8</td><td>13.1</td><td>40</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 69 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>0.4</td><td>1</td><td></td><td>8.5</td><td>12.9</td><td>18</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 206 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>1.0</td><td>1</td><td></td><td>23.7</td><td>12.4</td><td>77</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 88 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>2.0</td><td>1</td><td></td><td>48.7</td><td>12.0</td><td>120</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 39 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.4</td><td>1</td><td></td><td>9.3</td><td>11.4</td><td>17</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 248 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.2</td><td>1</td><td></td><td>5.5</td><td>11.1</td><td>25</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 254 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.5</td><td>1</td><td></td><td>12.4</td><td>11.0</td><td>62</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 15 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>0.4</td><td>1</td><td></td><td>9.3</td><td>10.2</td><td>71</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 220 - WARD 1 - LOW</td><td>WARD 1</td><td>LOW</td><td>0.0</td><td>1</td><td></td><td>0.7</td><td>10.1</td><td>6</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 251 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>0.5</td><td>1</td><td></td><td>11.8</td><td>10.0</td><td>67</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 111 - WARD 1 - LOW</td><td>WARD 1</td><td>LOW</td><td>0.3</td><td>1</td><td></td><td>6.5</td><td>9.7</td><td>16</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 172 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>0.2</td><td>1</td><td></td><td>5.9</td><td>9.7</td><td>33</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 76 - WARD 2 - MEDIUM</td><td>WARD 2</td><td>MEDIUM</td><td>0.3</td><td>1</td><td></td><td>6.9</td><td>9.6</td><td>24</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 5 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>0.1</td><td>1</td><td></td><td>3.5</td><td>9.2</td><td>26</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 259 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.5</td><td>1</td><td></td><td>12.6</td><td>8.8</td><td>44</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 140 - WARD 4 - LOW</td><td>WARD 4</td><td>LOW</td><td>0.3</td><td>1</td><td></td><td>7.1</td><td>8.8</td><td>24</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 252 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.0</td><td>1</td><td></td><td>0.0</td><td>8.7</td><td>0</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 194 - WARD 1 - LOW</td><td>WARD 1</td><td>LOW</td><td>0.0</td><td>1</td><td></td><td>0.1</td><td>8.0</td><td>7</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 38 - WARD 5 - MEDIUM</td><td>WARD 5</td><td>MEDIUM</td><td>0.3</td><td>1</td><td></td><td>6.7</td><td>7.9</td><td>11</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 232 - WARD 1 - MEDIUM</td><td>WARD 1</td><td>MEDIUM</td><td>0.1</td><td>1</td><td></td><td>3.4</td><td>7.9</td><td>6</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 180 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td>1</td><td></td><td>0.6</td><td>7.8</td><td>20</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 10 - WARD 1 - MEDIUM</td><td>WARD 1</td><td>MEDIUM</td><td>0.2</td><td>1</td><td></td><td>4.5</td><td>7.5</td><td>7</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 204 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.0</td><td>1</td><td></td><td>0.3</td><td>6.8</td><td>0</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 9 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.1</td><td>1</td><td></td><td>2.5</td><td>6.6</td><td>13</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 84 - WARD 2 - MEDIUM</td><td>WARD 2</td><td>MEDIUM</td><td>0.2</td><td>1</td><td></td><td>5.7</td><td>6.3</td><td>19</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 162 - WARD 1 - LOW</td><td>WARD 1</td><td>LOW</td><td>0.1</td><td>1</td><td></td><td>3.2</td><td>6.2</td><td>6</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 114 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>0.2</td><td>1</td><td></td><td>5.2</td><td>6.2</td><td>34</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 193 - WARD 4 - LOW</td><td>WARD 4</td><td>LOW</td><td>0.0</td><td>1</td><td></td><td>0.1</td><td>5.8</td><td>0</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 255 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.0</td><td>1</td><td></td><td>0.4</td><td>5.8</td><td>1</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 256 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.2</td><td>1</td><td></td><td>4.7</td><td>5.3</td><td>14</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 170 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.1</td><td>1</td><td></td><td>1.8</td><td>5.3</td><td>1</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 118 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.1</td><td>1</td><td></td><td>1.9</td><td>5.2</td><td>5</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 47 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>0.3</td><td>1</td><td></td><td>6.2</td><td>5.2</td><td>32</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 257 - WARD 1 - LOW</td><td>WARD 1</td><td>LOW</td><td>0.0</td><td>1</td><td></td><td>0.4</td><td>5.2</td><td>1</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 151 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.1</td><td>1</td><td></td><td>3.0</td><td>5.1</td><td>4</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 85 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.6</td><td>1</td><td></td><td>15.0</td><td>4.8</td><td>16</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 173 - WARD 4 - LOW</td><td>WARD 4</td><td>LOW</td><td>0.0</td><td>1</td><td></td><td>0.0</td><td>4.5</td><td>1</td><td><span class='pill toward'>toward</span></td></tr>
-<tr><td>Zone 90 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>0.6</td><td></td><td></td><td>14.7</td><td>3.8</td><td>43</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 214 - WARD 5 - MEDIUM</td><td>WARD 5</td><td>MEDIUM</td><td>0.7</td><td></td><td></td><td>18.0</td><td>3.8</td><td>64</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 113 - WARD 1 - MEDIUM</td><td>WARD 1</td><td>MEDIUM</td><td>0.8</td><td></td><td></td><td>18.8</td><td>3.6</td><td>35</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 77 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.1</td><td></td><td></td><td>1.6</td><td>3.6</td><td>7</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 117 - Target Zone 1 North East - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>0.1</td><td></td><td></td><td>1.5</td><td>3.4</td><td>6</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 130 - WARD 5 - MEDIUM</td><td>WARD 5</td><td>MEDIUM</td><td>0.5</td><td></td><td></td><td>12.7</td><td>3.2</td><td>40</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 91 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>3.2</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 163 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.1</td><td></td><td></td><td>1.6</td><td>3.2</td><td>2</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 137 - WARD 1 - MEDIUM</td><td>WARD 1</td><td>MEDIUM</td><td>0.2</td><td></td><td></td><td>4.3</td><td>3.2</td><td>11</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 96 - WARD 3 - HIGH</td><td>WARD 3</td><td>HIGH</td><td>0.6</td><td></td><td></td><td>14.0</td><td>2.9</td><td>23</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 13 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>2.9</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 246 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>0.2</td><td></td><td></td><td>4.6</td><td>2.8</td><td>17</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 184 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.4</td><td>2.5</td><td>8</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 80 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.1</td><td></td><td></td><td>3.6</td><td>2.3</td><td>12</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 181 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>0.1</td><td></td><td></td><td>2.2</td><td>2.0</td><td>8</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 183 - Target Zone 1 North East - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>0.1</td><td></td><td></td><td>1.9</td><td>2.0</td><td>9</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 195 - WARD 2 - MEDIUM</td><td>WARD 2</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.2</td><td>1.8</td><td>5</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 143 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>0.3</td><td></td><td></td><td>6.4</td><td>1.7</td><td>24</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 105 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>1.6</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 169 - WARD 7 - LOW</td><td>WARD 7</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>1.6</td><td>2</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 54 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.1</td><td></td><td></td><td>1.3</td><td>1.6</td><td>2</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 150 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.1</td><td></td><td></td><td>3.0</td><td>1.6</td><td>11</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 46 - WARD 2 - MEDIUM</td><td>WARD 2</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.1</td><td>1.5</td><td>7</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 158 - WARD 4 - LOW</td><td>WARD 4</td><td>LOW</td><td>0.3</td><td></td><td></td><td>6.3</td><td>1.5</td><td>6</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 30 - WARD 1 - LOW</td><td>WARD 1</td><td>LOW</td><td>0.2</td><td></td><td></td><td>5.5</td><td>1.4</td><td>15</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 51 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>0.1</td><td></td><td></td><td>2.5</td><td>1.4</td><td>6</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 228 - WARD 3 - MEDIUM</td><td>WARD 3</td><td>MEDIUM</td><td>0.6</td><td></td><td></td><td>14.6</td><td>1.3</td><td>22</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 176 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>0.1</td><td></td><td></td><td>1.7</td><td>1.2</td><td>12</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 107 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.8</td><td>1.1</td><td>9</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 212 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.2</td><td>1.1</td><td>10</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 171 - WARD 10 - LOW</td><td>WARD 10</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>1.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 153 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>1.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 3 - WARD 10 - LOW</td><td>WARD 10</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.9</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 87 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.8</td><td>0.8</td><td>3</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 261 - WARD 2 - MEDIUM</td><td>WARD 2</td><td>MEDIUM</td><td>0.1</td><td></td><td></td><td>3.1</td><td>0.8</td><td>7</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 121 - WARD 5 - MEDIUM</td><td>WARD 5</td><td>MEDIUM</td><td>0.1</td><td></td><td></td><td>1.9</td><td>0.7</td><td>5</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 73 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.1</td><td></td><td></td><td>1.9</td><td>0.7</td><td>16</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 120 - WARD 5 - LOW</td><td>WARD 5</td><td>LOW</td><td>0.1</td><td></td><td></td><td>1.9</td><td>0.7</td><td>5</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 24 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.6</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 229 - WARD 2 - HIGH</td><td>WARD 2</td><td>HIGH</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.6</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 188 - WARD 5 - LOW</td><td>WARD 5</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.6</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 17 - WARD 7 - LOW</td><td>WARD 7</td><td>LOW</td><td>0.0</td><td></td><td></td><td>1.1</td><td>0.5</td><td>5</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 125 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.6</td><td>0.4</td><td>4</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 106 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 189 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 264 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 249 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 240 - WARD 2 - MEDIUM</td><td>WARD 2</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 60 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>4</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 20 - WARD 2 - LOW</td><td>WARD 2</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 192 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>15</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 182 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>0.1</td><td></td><td></td><td>1.4</td><td>0.3</td><td>3</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 207 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.8</td><td>0.2</td><td>2</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 129 - WARD 10 - LOW</td><td>WARD 10</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.3</td><td>0.0</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 4 - WARD 10 - LOW</td><td>WARD 10</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 31 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 53 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 57 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 64 - WARD 10 - LOW</td><td>WARD 10</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 65 - WARD 10 - LOW</td><td>WARD 10</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 67 - WARD 10 - LOW</td><td>WARD 10</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 70 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 119 - WARD 10 - LOW</td><td>WARD 10</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 124 - WARD 10 - LOW</td><td>WARD 10</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 138 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 147 - WARD 10 - LOW</td><td>WARD 10</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 200 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 201 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 225 - WARD 10 - LOW</td><td>WARD 10</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 233 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 103 - WARD 7 - LOW</td><td>WARD 7</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 108 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 36 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 135 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 224 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 211 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 59 - WARD 10 - LOW</td><td>WARD 10</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 218 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 164 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 134 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 168 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 202 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 260 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 71 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 32 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 94 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 219 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 109 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 265 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 55 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 223 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 262 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 29 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 235 - WARD 4 - MEDIUM</td><td>WARD 4</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 83 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 79 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 166 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 144 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 227 - WARD 6 - LOW</td><td>WARD 6</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 210 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 11 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 197 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.1</td><td>-0.1</td><td>2</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 167 - WARD 9 - MEDIUM</td><td>WARD 9</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.1</td><td>-0.1</td><td>5</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 159 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>0.0</td><td></td><td></td><td>0.1</td><td>-0.1</td><td>2</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 33 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.7</td><td>-0.1</td><td>6</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 28 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>0.2</td><td></td><td></td><td>3.7</td><td>-0.1</td><td>17</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 127 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.0</td><td></td><td></td><td>0.5</td><td>-0.2</td><td>5</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 157 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>0.1</td><td></td><td></td><td>1.5</td><td>-0.2</td><td>6</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 42 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>0.1</td><td></td><td></td><td>1.3</td><td>-0.3</td><td>7</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 99 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>2.7</td><td></td><td></td><td>65.3</td><td>-0.3</td><td>160</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 231 - WARD 7 - MEDIUM</td><td>WARD 7</td><td>MEDIUM</td><td>0.3</td><td></td><td></td><td>6.2</td><td>-0.4</td><td>13</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 216 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>0.0</td><td></td><td></td><td>0.7</td><td>-0.4</td><td>4</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 263 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.1</td><td></td><td></td><td>2.4</td><td>-0.4</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 205 - WARD 2 - MEDIUM</td><td>WARD 2</td><td>MEDIUM</td><td>0.3</td><td></td><td></td><td>6.9</td><td>-1.0</td><td>14</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 8 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.1</td><td></td><td></td><td>2.1</td><td>-1.1</td><td>4</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 82 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.1</td><td></td><td></td><td>1.8</td><td>-1.1</td><td>4</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 95 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>0.7</td><td></td><td></td><td>16.2</td><td>-1.6</td><td>72</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 1 - WARD 1 - MEDIUM</td><td>WARD 1</td><td>MEDIUM</td><td>1.0</td><td></td><td></td><td>25.1</td><td>-1.7</td><td>94</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 37 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>0.1</td><td></td><td></td><td>2.7</td><td>-1.7</td><td>14</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 221 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.1</td><td></td><td></td><td>1.8</td><td>-1.8</td><td>3</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 178 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>0.2</td><td></td><td></td><td>5.0</td><td>-1.8</td><td>25</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 2 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>0.1</td><td></td><td></td><td>2.9</td><td>-2.0</td><td>8</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 93 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.1</td><td></td><td></td><td>2.1</td><td>-2.1</td><td>19</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 35 - WARD 10 - LOW</td><td>WARD 10</td><td>LOW</td><td>0.2</td><td></td><td></td><td>5.1</td><td>-3.4</td><td>23</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 132 - WARD 1 - HIGH</td><td>WARD 1</td><td>HIGH</td><td>0.9</td><td></td><td></td><td>20.8</td><td>-3.6</td><td>82</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 86 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>0.2</td><td></td><td></td><td>3.6</td><td>-3.6</td><td>3</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 253 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>0.4</td><td></td><td></td><td>10.1</td><td>-4.0</td><td>39</td><td><span class='pill watch'>watch</span></td></tr>
-<tr><td>Zone 97 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>0.8</td><td></td><td>1</td><td>18.2</td><td>-4.2</td><td>93</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 92 - WARD 1 - MEDIUM</td><td>WARD 1</td><td>MEDIUM</td><td>0.5</td><td></td><td>0</td><td>11.2</td><td>-4.7</td><td>82</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 56 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>0.5</td><td></td><td>0</td><td>11.0</td><td>-5.1</td><td>50</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 50 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.3</td><td></td><td>0</td><td>7.2</td><td>-5.9</td><td>4</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 102 - WARD 1 - MEDIUM</td><td>WARD 1</td><td>MEDIUM</td><td>0.7</td><td></td><td>1</td><td>16.7</td><td>-6.0</td><td>20</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 239 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>4.3</td><td></td><td>1</td><td>102.6</td><td>-6.2</td><td>259</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 21 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>0.8</td><td></td><td>1</td><td>19.3</td><td>-6.7</td><td>63</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 142 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>0.5</td><td></td><td>0</td><td>11.8</td><td>-7.3</td><td>56</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 68 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>5.8</td><td></td><td>1</td><td>139.9</td><td>-7.4</td><td>520</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 145 - WARD 7 - MEDIUM</td><td>WARD 7</td><td>MEDIUM</td><td>0.8</td><td></td><td>1</td><td>19.2</td><td>-8.1</td><td>33</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 58 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>1.1</td><td></td><td>1</td><td>26.6</td><td>-8.4</td><td>51</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 12 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>1.4</td><td></td><td>1</td><td>33.3</td><td>-8.7</td><td>56</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 250 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>1.2</td><td></td><td>1</td><td>28.5</td><td>-9.0</td><td>127</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 40 - WARD 9 - MEDIUM</td><td>WARD 9</td><td>MEDIUM</td><td>0.7</td><td></td><td>1</td><td>16.7</td><td>-9.6</td><td>95</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 247 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>1.1</td><td></td><td>1</td><td>27.5</td><td>-9.7</td><td>35</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 234 - WARD 2 - MEDIUM</td><td>WARD 2</td><td>MEDIUM</td><td>3.9</td><td></td><td>1</td><td>93.9</td><td>-10.2</td><td>160</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 66 - WARD 3 - MEDIUM</td><td>WARD 3</td><td>MEDIUM</td><td>0.9</td><td></td><td>1</td><td>20.5</td><td>-10.7</td><td>22</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 177 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>1.2</td><td></td><td>1</td><td>29.1</td><td>-11.6</td><td>111</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 175 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>0.7</td><td></td><td>1</td><td>16.3</td><td>-12.1</td><td>54</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 112 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>1.2</td><td></td><td>1</td><td>29.9</td><td>-12.3</td><td>62</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 45 - WARD 1 - MEDIUM</td><td>WARD 1</td><td>MEDIUM</td><td>0.7</td><td></td><td>1</td><td>17.9</td><td>-12.4</td><td>63</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 72 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>1.7</td><td></td><td>1</td><td>40.5</td><td>-12.9</td><td>230</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 126 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>1.7</td><td></td><td>1</td><td>41.5</td><td>-12.9</td><td>96</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 174 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>2.2</td><td></td><td>1</td><td>52.2</td><td>-14.6</td><td>165</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 238 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>2.9</td><td></td><td>1</td><td>69.1</td><td>-15.2</td><td>331</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 196 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>0.7</td><td></td><td>1</td><td>16.6</td><td>-16.0</td><td>47</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 98 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>1.7</td><td></td><td>1</td><td>41.1</td><td>-17.0</td><td>90</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 243 - WARD 9 - HIGH</td><td>WARD 9</td><td>HIGH</td><td>1.2</td><td></td><td>1</td><td>27.9</td><td>-18.4</td><td>117</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 209 - WARD 9 - MEDIUM</td><td>WARD 9</td><td>MEDIUM</td><td>0.8</td><td></td><td>1</td><td>18.8</td><td>-18.8</td><td>51</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 191 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>3.1</td><td></td><td>1</td><td>73.3</td><td>-20.4</td><td>228</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 199 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>1.2</td><td></td><td>1</td><td>29.5</td><td>-21.7</td><td>165</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 44 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>2.2</td><td></td><td>1</td><td>53.4</td><td>-22.9</td><td>133</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 115 - WARD 8 - HIGH</td><td>WARD 8</td><td>HIGH</td><td>1.2</td><td></td><td>1</td><td>27.6</td><td>-25.1</td><td>55</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 245 - WARD 10 - LOW</td><td>WARD 10</td><td>LOW</td><td>1.2</td><td></td><td>1</td><td>29.4</td><td>-26.8</td><td>24</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 122 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>1.6</td><td></td><td>1</td><td>37.4</td><td>-28.3</td><td>40</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 258 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>2.0</td><td></td><td>1</td><td>49.0</td><td>-30.8</td><td>215</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 215 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>1.3</td><td></td><td>1</td><td>31.5</td><td>-31.5</td><td>32</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 74 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>6.2</td><td></td><td>1</td><td>148.5</td><td>-31.6</td><td>732</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 27 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>2.7</td><td></td><td>1</td><td>65.0</td><td>-35.5</td><td>189</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 49 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>2.9</td><td></td><td>1</td><td>69.0</td><td>-35.5</td><td>205</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 237 - WARD 8 - HIGH</td><td>WARD 8</td><td>HIGH</td><td>4.0</td><td></td><td>2</td><td>96.9</td><td>-37.4</td><td>231</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 226 - WARD 6 - HIGH</td><td>WARD 6</td><td>HIGH</td><td>4.0</td><td></td><td>2</td><td>95.4</td><td>-40.2</td><td>239</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 6 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>2.4</td><td></td><td>2</td><td>57.2</td><td>-42.0</td><td>211</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 78 - WARD 2 - HIGH</td><td>WARD 2</td><td>HIGH</td><td>2.1</td><td></td><td>2</td><td>49.5</td><td>-42.6</td><td>158</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 230 - WARD 8 - LOW</td><td>WARD 8</td><td>LOW</td><td>2.1</td><td></td><td>2</td><td>49.8</td><td>-46.3</td><td>67</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 101 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>2.8</td><td></td><td>2</td><td>66.7</td><td>-47.9</td><td>113</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 14 - WARD 8 - MEDIUM</td><td>WARD 8</td><td>MEDIUM</td><td>3.2</td><td></td><td>2</td><td>75.9</td><td>-48.3</td><td>125</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 244 - WARD 6 - MEDIUM</td><td>WARD 6</td><td>MEDIUM</td><td>9.4</td><td></td><td>2</td><td>226.4</td><td>-49.1</td><td>628</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 187 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>3.7</td><td></td><td>2</td><td>87.7</td><td>-55.6</td><td>257</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 160 - WARD 10 - MEDIUM</td><td>WARD 10</td><td>MEDIUM</td><td>3.8</td><td></td><td>2</td><td>92.1</td><td>-55.8</td><td>113</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 133 - WARD 9 - HIGH</td><td>WARD 9</td><td>HIGH</td><td>6.6</td><td></td><td>3</td><td>159.5</td><td>-60.5</td><td>357</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 152 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>4.8</td><td></td><td>3</td><td>114.4</td><td>-73.8</td><td>279</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 185 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>5.1</td><td></td><td>3</td><td>121.8</td><td>-81.2</td><td>371</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 22 - WARD 9 - HIGH</td><td>WARD 9</td><td>HIGH</td><td>4.8</td><td></td><td>4</td><td>114.5</td><td>-86.0</td><td>356</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 146 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>8.3</td><td></td><td>4</td><td>199.7</td><td>-106.2</td><td>421</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 208 - WARD 4 - HIGH</td><td>WARD 4</td><td>HIGH</td><td>8.0</td><td></td><td>5</td><td>191.2</td><td>-114.9</td><td>248</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 242 - WARD 3 - LOW</td><td>WARD 3</td><td>LOW</td><td>5.2</td><td></td><td>5</td><td>125.4</td><td>-121.2</td><td>774</td><td><span class='pill away'>away</span></td></tr>
-<tr><td>Zone 217 - WARD 10 - HIGH</td><td>WARD 10</td><td>HIGH</td><td>8.4</td><td></td><td>6</td><td>201.5</td><td>-146.0</td><td>817</td><td><span class='pill away'>away</span></td></tr>
+<table><thead><tr><th>Zone</th><th>Avg scooters</th><th>Add scooters</th><th>Remove scooters</th><th>Vehicle-hours/day</th><th>Gap/day</th><th>Observed trips</th><th>Action</th></tr></thead><tbody>
+<tr><td>Zone 141 - WARD 3 - MEDIUM</td><td>19.7</td><td>5</td><td></td><td>473.9</td><td>127.0</td><td>2,568</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 62 - WARD 4 - HIGH</td><td>1.2</td><td>5</td><td></td><td>27.8</td><td>122.2</td><td>92</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 81 - WARD 6 - HIGH</td><td>0.4</td><td>3</td><td></td><td>8.8</td><td>78.8</td><td>49</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 149 - WARD 3 - MEDIUM</td><td>0.7</td><td>3</td><td></td><td>17.3</td><td>78.2</td><td>49</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 165 - WARD 4 - HIGH</td><td>0.9</td><td>3</td><td></td><td>22.5</td><td>74.6</td><td>50</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 236 - WARD 3 - LOW</td><td>3.6</td><td>2</td><td></td><td>87.0</td><td>51.9</td><td>213</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 104 - WARD 3 - MEDIUM</td><td>0.3</td><td>2</td><td></td><td>7.4</td><td>46.5</td><td>21</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 16 - Target Zone 1 North East - WARD 10 - HIGH</td><td>0.2</td><td>2</td><td></td><td>4.4</td><td>45.6</td><td>20</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 61 - WARD 3 - MEDIUM</td><td>0.2</td><td>2</td><td></td><td>4.3</td><td>40.1</td><td>15</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 89 - WARD 1 - MEDIUM</td><td>0.2</td><td>2</td><td></td><td>4.9</td><td>39.9</td><td>17</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 100 - WARD 5 - MEDIUM</td><td>0.3</td><td>2</td><td></td><td>6.6</td><td>39.8</td><td>23</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 213 - Target Zone 1 North East - WARD 10 - HIGH</td><td>0.0</td><td>2</td><td></td><td>0.2</td><td>38.7</td><td>1</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 41 - WARD 1 - LOW</td><td>0.2</td><td>2</td><td></td><td>4.7</td><td>38.1</td><td>15</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 52 - WARD 6 - HIGH</td><td>0.9</td><td>2</td><td></td><td>21.2</td><td>37.2</td><td>141</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 139 - WARD 6 - MEDIUM</td><td>0.5</td><td>1</td><td></td><td>12.2</td><td>33.3</td><td>69</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 128 - WARD 4 - MEDIUM</td><td>0.4</td><td>1</td><td></td><td>9.8</td><td>32.1</td><td>33</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 203 - WARD 3 - LOW</td><td>0.0</td><td>1</td><td></td><td>0.3</td><td>31.8</td><td>6</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 222 - WARD 4 - MEDIUM</td><td>0.4</td><td>1</td><td></td><td>8.6</td><td>31.6</td><td>34</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 123 - WARD 1 - MEDIUM</td><td>0.1</td><td>1</td><td></td><td>2.7</td><td>30.7</td><td>12</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 75 - WARD 1 - MEDIUM</td><td>0.4</td><td>1</td><td></td><td>8.8</td><td>30.5</td><td>16</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 155 - WARD 3 - LOW</td><td>0.2</td><td>1</td><td></td><td>4.6</td><td>28.9</td><td>9</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 241 - WARD 8 - MEDIUM</td><td>14.6</td><td>1</td><td></td><td>350.5</td><td>27.8</td><td>2,050</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 19 - WARD 8 - MEDIUM</td><td>0.2</td><td>1</td><td></td><td>5.7</td><td>27.4</td><td>23</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 190 - WARD 4 - MEDIUM</td><td>0.1</td><td>1</td><td></td><td>1.3</td><td>27.2</td><td>16</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 161 - WARD 6 - MEDIUM</td><td>1.2</td><td>1</td><td></td><td>28.2</td><td>25.7</td><td>118</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 26 - WARD 4 - HIGH</td><td>0.4</td><td>1</td><td></td><td>10.5</td><td>23.3</td><td>37</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 136 - WARD 4 - MEDIUM</td><td>0.3</td><td>1</td><td></td><td>6.6</td><td>23.0</td><td>27</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 25 - WARD 4 - MEDIUM</td><td>0.4</td><td>1</td><td></td><td>9.9</td><td>22.6</td><td>58</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 7 - WARD 3 - MEDIUM</td><td>0.1</td><td>1</td><td></td><td>2.8</td><td>22.5</td><td>15</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 131 - WARD 6 - HIGH</td><td>0.9</td><td>1</td><td></td><td>21.0</td><td>21.5</td><td>73</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 63 - WARD 4 - MEDIUM</td><td>0.2</td><td>1</td><td></td><td>4.6</td><td>20.7</td><td>19</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 116 - WARD 4 - HIGH</td><td>0.1</td><td>1</td><td></td><td>3.4</td><td>20.0</td><td>9</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 43 - WARD 4 - MEDIUM</td><td>3.1</td><td>1</td><td></td><td>74.2</td><td>19.6</td><td>183</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 18 - WARD 1 - LOW</td><td>0.5</td><td>1</td><td></td><td>12.7</td><td>19.4</td><td>21</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 48 - WARD 4 - HIGH</td><td>0.0</td><td>1</td><td></td><td>1.1</td><td>18.1</td><td>3</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 154 - WARD 4 - MEDIUM</td><td>0.2</td><td>1</td><td></td><td>4.9</td><td>17.8</td><td>11</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 110 - WARD 4 - MEDIUM</td><td>0.8</td><td>1</td><td></td><td>19.8</td><td>16.3</td><td>39</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 156 - WARD 4 - MEDIUM</td><td>0.1</td><td>1</td><td></td><td>1.9</td><td>15.7</td><td>8</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 34 - WARD 3 - MEDIUM</td><td>0.5</td><td>1</td><td></td><td>11.7</td><td>15.3</td><td>29</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 179 - WARD 5 - LOW</td><td>0.1</td><td>1</td><td></td><td>3.0</td><td>14.2</td><td>12</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 23 - WARD 3 - LOW</td><td>0.1</td><td>1</td><td></td><td>2.2</td><td>14.0</td><td>7</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 186 - WARD 6 - HIGH</td><td>0.0</td><td>1</td><td></td><td>0.4</td><td>13.9</td><td>0</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 148 - WARD 3 - LOW</td><td>0.1</td><td>1</td><td></td><td>2.6</td><td>13.3</td><td>14</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 198 - WARD 1 - MEDIUM</td><td>0.7</td><td>1</td><td></td><td>16.8</td><td>13.1</td><td>40</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 69 - WARD 8 - MEDIUM</td><td>0.4</td><td>1</td><td></td><td>8.5</td><td>12.9</td><td>18</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 206 - WARD 4 - HIGH</td><td>1.0</td><td>1</td><td></td><td>23.7</td><td>12.4</td><td>77</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 88 - WARD 3 - LOW</td><td>2.0</td><td>1</td><td></td><td>48.7</td><td>12.0</td><td>120</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 39 - WARD 3 - LOW</td><td>0.4</td><td>1</td><td></td><td>9.3</td><td>11.4</td><td>17</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 248 - WARD 4 - MEDIUM</td><td>0.2</td><td>1</td><td></td><td>5.5</td><td>11.1</td><td>25</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 254 - WARD 3 - LOW</td><td>0.5</td><td>1</td><td></td><td>12.4</td><td>11.0</td><td>62</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 15 - WARD 8 - MEDIUM</td><td>0.4</td><td>1</td><td></td><td>9.3</td><td>10.2</td><td>71</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 220 - WARD 1 - LOW</td><td>0.0</td><td>1</td><td></td><td>0.7</td><td>10.1</td><td>6</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 251 - WARD 6 - HIGH</td><td>0.5</td><td>1</td><td></td><td>11.8</td><td>10.0</td><td>67</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 111 - WARD 1 - LOW</td><td>0.3</td><td>1</td><td></td><td>6.5</td><td>9.7</td><td>16</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 172 - WARD 8 - MEDIUM</td><td>0.2</td><td>1</td><td></td><td>5.9</td><td>9.7</td><td>33</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 76 - WARD 2 - MEDIUM</td><td>0.3</td><td>1</td><td></td><td>6.9</td><td>9.6</td><td>24</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 5 - WARD 6 - MEDIUM</td><td>0.1</td><td>1</td><td></td><td>3.5</td><td>9.2</td><td>26</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 259 - WARD 4 - MEDIUM</td><td>0.5</td><td>1</td><td></td><td>12.6</td><td>8.8</td><td>44</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 140 - WARD 4 - LOW</td><td>0.3</td><td>1</td><td></td><td>7.1</td><td>8.8</td><td>24</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 252 - WARD 3 - LOW</td><td>0.0</td><td>1</td><td></td><td>0.0</td><td>8.7</td><td>0</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 194 - WARD 1 - LOW</td><td>0.0</td><td>1</td><td></td><td>0.1</td><td>8.0</td><td>7</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 38 - WARD 5 - MEDIUM</td><td>0.3</td><td>1</td><td></td><td>6.7</td><td>7.9</td><td>11</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 232 - WARD 1 - MEDIUM</td><td>0.1</td><td>1</td><td></td><td>3.4</td><td>7.9</td><td>6</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 180 - WARD 6 - LOW</td><td>0.0</td><td>1</td><td></td><td>0.6</td><td>7.8</td><td>20</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 10 - WARD 1 - MEDIUM</td><td>0.2</td><td>1</td><td></td><td>4.5</td><td>7.5</td><td>7</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 204 - WARD 3 - LOW</td><td>0.0</td><td>1</td><td></td><td>0.3</td><td>6.8</td><td>0</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 9 - WARD 3 - LOW</td><td>0.1</td><td>1</td><td></td><td>2.5</td><td>6.6</td><td>13</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 84 - WARD 2 - MEDIUM</td><td>0.2</td><td>1</td><td></td><td>5.7</td><td>6.3</td><td>19</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 162 - WARD 1 - LOW</td><td>0.1</td><td>1</td><td></td><td>3.2</td><td>6.2</td><td>6</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 114 - WARD 6 - MEDIUM</td><td>0.2</td><td>1</td><td></td><td>5.2</td><td>6.2</td><td>34</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 193 - WARD 4 - LOW</td><td>0.0</td><td>1</td><td></td><td>0.1</td><td>5.8</td><td>0</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 255 - WARD 4 - MEDIUM</td><td>0.0</td><td>1</td><td></td><td>0.4</td><td>5.8</td><td>1</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 256 - WARD 3 - LOW</td><td>0.2</td><td>1</td><td></td><td>4.7</td><td>5.3</td><td>14</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 170 - WARD 3 - LOW</td><td>0.1</td><td>1</td><td></td><td>1.8</td><td>5.3</td><td>1</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 118 - WARD 4 - MEDIUM</td><td>0.1</td><td>1</td><td></td><td>1.9</td><td>5.2</td><td>5</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 47 - WARD 6 - MEDIUM</td><td>0.3</td><td>1</td><td></td><td>6.2</td><td>5.2</td><td>32</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 257 - WARD 1 - LOW</td><td>0.0</td><td>1</td><td></td><td>0.4</td><td>5.2</td><td>1</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 151 - WARD 3 - LOW</td><td>0.1</td><td>1</td><td></td><td>3.0</td><td>5.1</td><td>4</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 85 - WARD 3 - LOW</td><td>0.6</td><td>1</td><td></td><td>15.0</td><td>4.8</td><td>16</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 173 - WARD 4 - LOW</td><td>0.0</td><td>1</td><td></td><td>0.0</td><td>4.5</td><td>1</td><td><span class='pill toward'>toward</span></td></tr>
+<tr><td>Zone 90 - WARD 4 - HIGH</td><td>0.6</td><td></td><td></td><td>14.7</td><td>3.8</td><td>43</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 214 - WARD 5 - MEDIUM</td><td>0.7</td><td></td><td></td><td>18.0</td><td>3.8</td><td>64</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 113 - WARD 1 - MEDIUM</td><td>0.8</td><td></td><td></td><td>18.8</td><td>3.6</td><td>35</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 77 - WARD 8 - LOW</td><td>0.1</td><td></td><td></td><td>1.6</td><td>3.6</td><td>7</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 117 - Target Zone 1 North East - WARD 10 - HIGH</td><td>0.1</td><td></td><td></td><td>1.5</td><td>3.4</td><td>6</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 130 - WARD 5 - MEDIUM</td><td>0.5</td><td></td><td></td><td>12.7</td><td>3.2</td><td>40</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 91 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>3.2</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 163 - WARD 4 - MEDIUM</td><td>0.1</td><td></td><td></td><td>1.6</td><td>3.2</td><td>2</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 137 - WARD 1 - MEDIUM</td><td>0.2</td><td></td><td></td><td>4.3</td><td>3.2</td><td>11</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 96 - WARD 3 - HIGH</td><td>0.6</td><td></td><td></td><td>14.0</td><td>2.9</td><td>23</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 13 - WARD 3 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>2.9</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 246 - WARD 6 - HIGH</td><td>0.2</td><td></td><td></td><td>4.6</td><td>2.8</td><td>17</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 184 - WARD 3 - LOW</td><td>0.0</td><td></td><td></td><td>0.4</td><td>2.5</td><td>8</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 80 - WARD 4 - MEDIUM</td><td>0.1</td><td></td><td></td><td>3.6</td><td>2.3</td><td>12</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 181 - WARD 10 - MEDIUM</td><td>0.1</td><td></td><td></td><td>2.2</td><td>2.0</td><td>8</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 183 - Target Zone 1 North East - WARD 10 - HIGH</td><td>0.1</td><td></td><td></td><td>1.9</td><td>2.0</td><td>9</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 195 - WARD 2 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.2</td><td>1.8</td><td>5</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 143 - WARD 6 - MEDIUM</td><td>0.3</td><td></td><td></td><td>6.4</td><td>1.7</td><td>24</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 105 - WARD 10 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>1.6</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 169 - WARD 7 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>1.6</td><td>2</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 54 - WARD 3 - LOW</td><td>0.1</td><td></td><td></td><td>1.3</td><td>1.6</td><td>2</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 150 - WARD 4 - MEDIUM</td><td>0.1</td><td></td><td></td><td>3.0</td><td>1.6</td><td>11</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 46 - WARD 2 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.1</td><td>1.5</td><td>7</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 158 - WARD 4 - LOW</td><td>0.3</td><td></td><td></td><td>6.3</td><td>1.5</td><td>6</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 30 - WARD 1 - LOW</td><td>0.2</td><td></td><td></td><td>5.5</td><td>1.4</td><td>15</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 51 - WARD 4 - HIGH</td><td>0.1</td><td></td><td></td><td>2.5</td><td>1.4</td><td>6</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 228 - WARD 3 - MEDIUM</td><td>0.6</td><td></td><td></td><td>14.6</td><td>1.3</td><td>22</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 176 - WARD 6 - MEDIUM</td><td>0.1</td><td></td><td></td><td>1.7</td><td>1.2</td><td>12</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 107 - WARD 4 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.8</td><td>1.1</td><td>9</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 212 - WARD 3 - LOW</td><td>0.0</td><td></td><td></td><td>0.2</td><td>1.1</td><td>10</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 171 - WARD 10 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>1.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 153 - WARD 6 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>1.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 3 - WARD 10 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.9</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 87 - WARD 3 - LOW</td><td>0.0</td><td></td><td></td><td>0.8</td><td>0.8</td><td>3</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 261 - WARD 2 - MEDIUM</td><td>0.1</td><td></td><td></td><td>3.1</td><td>0.8</td><td>7</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 121 - WARD 5 - MEDIUM</td><td>0.1</td><td></td><td></td><td>1.9</td><td>0.7</td><td>5</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 73 - WARD 3 - LOW</td><td>0.1</td><td></td><td></td><td>1.9</td><td>0.7</td><td>16</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 120 - WARD 5 - LOW</td><td>0.1</td><td></td><td></td><td>1.9</td><td>0.7</td><td>5</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 24 - WARD 3 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.6</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 229 - WARD 2 - HIGH</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.6</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 188 - WARD 5 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.6</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 17 - WARD 7 - LOW</td><td>0.0</td><td></td><td></td><td>1.1</td><td>0.5</td><td>5</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 125 - WARD 3 - LOW</td><td>0.0</td><td></td><td></td><td>0.6</td><td>0.4</td><td>4</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 106 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 189 - WARD 10 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 264 - WARD 4 - HIGH</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 249 - WARD 10 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 240 - WARD 2 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 60 - WARD 8 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>4</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 20 - WARD 2 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 192 - WARD 8 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.3</td><td>15</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 182 - WARD 8 - MEDIUM</td><td>0.1</td><td></td><td></td><td>1.4</td><td>0.3</td><td>3</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 207 - WARD 4 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.8</td><td>0.2</td><td>2</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 129 - WARD 10 - LOW</td><td>0.0</td><td></td><td></td><td>0.3</td><td>0.0</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 4 - WARD 10 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 31 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 53 - WARD 6 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 57 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 64 - WARD 10 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 65 - WARD 10 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 67 - WARD 10 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 70 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 119 - WARD 10 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 124 - WARD 10 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 138 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 147 - WARD 10 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 200 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 201 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 225 - WARD 10 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 233 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 103 - WARD 7 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 108 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 36 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 135 - WARD 3 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 224 - WARD 4 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 211 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 59 - WARD 10 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 218 - WARD 10 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 164 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 134 - WARD 8 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 168 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 202 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 260 - WARD 3 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 71 - WARD 6 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 32 - WARD 6 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 94 - WARD 8 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 219 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 109 - WARD 8 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 265 - WARD 10 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 55 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 223 - WARD 8 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 262 - WARD 8 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 29 - WARD 8 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 235 - WARD 4 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 83 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 79 - WARD 8 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 166 - WARD 8 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 144 - WARD 8 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 227 - WARD 6 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>1</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 210 - WARD 8 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 11 - WARD 8 - LOW</td><td>0.0</td><td></td><td></td><td>0.0</td><td>-0.0</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 197 - WARD 3 - LOW</td><td>0.0</td><td></td><td></td><td>0.1</td><td>-0.1</td><td>2</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 167 - WARD 9 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.1</td><td>-0.1</td><td>5</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 159 - WARD 4 - HIGH</td><td>0.0</td><td></td><td></td><td>0.1</td><td>-0.1</td><td>2</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 33 - WARD 10 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.7</td><td>-0.1</td><td>6</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 28 - WARD 6 - HIGH</td><td>0.2</td><td></td><td></td><td>3.7</td><td>-0.1</td><td>17</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 127 - WARD 8 - LOW</td><td>0.0</td><td></td><td></td><td>0.5</td><td>-0.2</td><td>5</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 157 - WARD 8 - MEDIUM</td><td>0.1</td><td></td><td></td><td>1.5</td><td>-0.2</td><td>6</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 42 - WARD 4 - HIGH</td><td>0.1</td><td></td><td></td><td>1.3</td><td>-0.3</td><td>7</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 99 - WARD 4 - HIGH</td><td>2.7</td><td></td><td></td><td>65.3</td><td>-0.3</td><td>160</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 231 - WARD 7 - MEDIUM</td><td>0.3</td><td></td><td></td><td>6.2</td><td>-0.4</td><td>13</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 216 - WARD 10 - MEDIUM</td><td>0.0</td><td></td><td></td><td>0.7</td><td>-0.4</td><td>4</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 263 - WARD 8 - LOW</td><td>0.1</td><td></td><td></td><td>2.4</td><td>-0.4</td><td>0</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 205 - WARD 2 - MEDIUM</td><td>0.3</td><td></td><td></td><td>6.9</td><td>-1.0</td><td>14</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 8 - WARD 3 - LOW</td><td>0.1</td><td></td><td></td><td>2.1</td><td>-1.1</td><td>4</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 82 - WARD 3 - LOW</td><td>0.1</td><td></td><td></td><td>1.8</td><td>-1.1</td><td>4</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 95 - WARD 10 - MEDIUM</td><td>0.7</td><td></td><td></td><td>16.2</td><td>-1.6</td><td>72</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 1 - WARD 1 - MEDIUM</td><td>1.0</td><td></td><td></td><td>25.1</td><td>-1.7</td><td>94</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 37 - WARD 10 - MEDIUM</td><td>0.1</td><td></td><td></td><td>2.7</td><td>-1.7</td><td>14</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 221 - WARD 8 - LOW</td><td>0.1</td><td></td><td></td><td>1.8</td><td>-1.8</td><td>3</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 178 - WARD 6 - MEDIUM</td><td>0.2</td><td></td><td></td><td>5.0</td><td>-1.8</td><td>25</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 2 - WARD 10 - MEDIUM</td><td>0.1</td><td></td><td></td><td>2.9</td><td>-2.0</td><td>8</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 93 - WARD 3 - LOW</td><td>0.1</td><td></td><td></td><td>2.1</td><td>-2.1</td><td>19</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 35 - WARD 10 - LOW</td><td>0.2</td><td></td><td></td><td>5.1</td><td>-3.4</td><td>23</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 132 - WARD 1 - HIGH</td><td>0.9</td><td></td><td></td><td>20.8</td><td>-3.6</td><td>82</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 86 - WARD 8 - LOW</td><td>0.2</td><td></td><td></td><td>3.6</td><td>-3.6</td><td>3</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 253 - WARD 6 - HIGH</td><td>0.4</td><td></td><td></td><td>10.1</td><td>-4.0</td><td>39</td><td><span class='pill watch'>watch</span></td></tr>
+<tr><td>Zone 97 - WARD 10 - HIGH</td><td>0.8</td><td></td><td>1</td><td>18.2</td><td>-4.2</td><td>93</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 92 - WARD 1 - MEDIUM</td><td>0.5</td><td></td><td>0</td><td>11.2</td><td>-4.7</td><td>82</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 56 - WARD 6 - HIGH</td><td>0.5</td><td></td><td>0</td><td>11.0</td><td>-5.1</td><td>50</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 50 - WARD 3 - LOW</td><td>0.3</td><td></td><td>0</td><td>7.2</td><td>-5.9</td><td>4</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 102 - WARD 1 - MEDIUM</td><td>0.7</td><td></td><td>1</td><td>16.7</td><td>-6.0</td><td>20</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 239 - WARD 6 - HIGH</td><td>4.3</td><td></td><td>1</td><td>102.6</td><td>-6.2</td><td>259</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 21 - WARD 10 - HIGH</td><td>0.8</td><td></td><td>1</td><td>19.3</td><td>-6.7</td><td>63</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 142 - WARD 8 - MEDIUM</td><td>0.5</td><td></td><td>0</td><td>11.8</td><td>-7.3</td><td>56</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 68 - WARD 6 - HIGH</td><td>5.8</td><td></td><td>1</td><td>139.9</td><td>-7.4</td><td>520</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 145 - WARD 7 - MEDIUM</td><td>0.8</td><td></td><td>1</td><td>19.2</td><td>-8.1</td><td>33</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 58 - WARD 8 - MEDIUM</td><td>1.1</td><td></td><td>1</td><td>26.6</td><td>-8.4</td><td>51</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 12 - WARD 6 - MEDIUM</td><td>1.4</td><td></td><td>1</td><td>33.3</td><td>-8.7</td><td>56</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 250 - WARD 10 - HIGH</td><td>1.2</td><td></td><td>1</td><td>28.5</td><td>-9.0</td><td>127</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 40 - WARD 9 - MEDIUM</td><td>0.7</td><td></td><td>1</td><td>16.7</td><td>-9.6</td><td>95</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 247 - WARD 8 - MEDIUM</td><td>1.1</td><td></td><td>1</td><td>27.5</td><td>-9.7</td><td>35</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 234 - WARD 2 - MEDIUM</td><td>3.9</td><td></td><td>1</td><td>93.9</td><td>-10.2</td><td>160</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 66 - WARD 3 - MEDIUM</td><td>0.9</td><td></td><td>1</td><td>20.5</td><td>-10.7</td><td>22</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 177 - WARD 4 - HIGH</td><td>1.2</td><td></td><td>1</td><td>29.1</td><td>-11.6</td><td>111</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 175 - WARD 6 - MEDIUM</td><td>0.7</td><td></td><td>1</td><td>16.3</td><td>-12.1</td><td>54</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 112 - WARD 6 - HIGH</td><td>1.2</td><td></td><td>1</td><td>29.9</td><td>-12.3</td><td>62</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 45 - WARD 1 - MEDIUM</td><td>0.7</td><td></td><td>1</td><td>17.9</td><td>-12.4</td><td>63</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 72 - WARD 6 - HIGH</td><td>1.7</td><td></td><td>1</td><td>40.5</td><td>-12.9</td><td>230</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 126 - WARD 8 - MEDIUM</td><td>1.7</td><td></td><td>1</td><td>41.5</td><td>-12.9</td><td>96</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 174 - WARD 6 - MEDIUM</td><td>2.2</td><td></td><td>1</td><td>52.2</td><td>-14.6</td><td>165</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 238 - WARD 10 - HIGH</td><td>2.9</td><td></td><td>1</td><td>69.1</td><td>-15.2</td><td>331</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 196 - WARD 3 - LOW</td><td>0.7</td><td></td><td>1</td><td>16.6</td><td>-16.0</td><td>47</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 98 - WARD 6 - HIGH</td><td>1.7</td><td></td><td>1</td><td>41.1</td><td>-17.0</td><td>90</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 243 - WARD 9 - HIGH</td><td>1.2</td><td></td><td>1</td><td>27.9</td><td>-18.4</td><td>117</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 209 - WARD 9 - MEDIUM</td><td>0.8</td><td></td><td>1</td><td>18.8</td><td>-18.8</td><td>51</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 191 - WARD 6 - HIGH</td><td>3.1</td><td></td><td>1</td><td>73.3</td><td>-20.4</td><td>228</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 199 - WARD 10 - HIGH</td><td>1.2</td><td></td><td>1</td><td>29.5</td><td>-21.7</td><td>165</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 44 - WARD 3 - LOW</td><td>2.2</td><td></td><td>1</td><td>53.4</td><td>-22.9</td><td>133</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 115 - WARD 8 - HIGH</td><td>1.2</td><td></td><td>1</td><td>27.6</td><td>-25.1</td><td>55</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 245 - WARD 10 - LOW</td><td>1.2</td><td></td><td>1</td><td>29.4</td><td>-26.8</td><td>24</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 122 - WARD 8 - MEDIUM</td><td>1.6</td><td></td><td>1</td><td>37.4</td><td>-28.3</td><td>40</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 258 - WARD 10 - HIGH</td><td>2.0</td><td></td><td>1</td><td>49.0</td><td>-30.8</td><td>215</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 215 - WARD 8 - LOW</td><td>1.3</td><td></td><td>1</td><td>31.5</td><td>-31.5</td><td>32</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 74 - WARD 6 - MEDIUM</td><td>6.2</td><td></td><td>1</td><td>148.5</td><td>-31.6</td><td>732</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 27 - WARD 6 - HIGH</td><td>2.7</td><td></td><td>1</td><td>65.0</td><td>-35.5</td><td>189</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 49 - WARD 6 - MEDIUM</td><td>2.9</td><td></td><td>1</td><td>69.0</td><td>-35.5</td><td>205</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 237 - WARD 8 - HIGH</td><td>4.0</td><td></td><td>2</td><td>96.9</td><td>-37.4</td><td>231</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 226 - WARD 6 - HIGH</td><td>4.0</td><td></td><td>2</td><td>95.4</td><td>-40.2</td><td>239</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 6 - WARD 10 - MEDIUM</td><td>2.4</td><td></td><td>2</td><td>57.2</td><td>-42.0</td><td>211</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 78 - WARD 2 - HIGH</td><td>2.1</td><td></td><td>2</td><td>49.5</td><td>-42.6</td><td>158</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 230 - WARD 8 - LOW</td><td>2.1</td><td></td><td>2</td><td>49.8</td><td>-46.3</td><td>67</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 101 - WARD 8 - MEDIUM</td><td>2.8</td><td></td><td>2</td><td>66.7</td><td>-47.9</td><td>113</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 14 - WARD 8 - MEDIUM</td><td>3.2</td><td></td><td>2</td><td>75.9</td><td>-48.3</td><td>125</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 244 - WARD 6 - MEDIUM</td><td>9.4</td><td></td><td>2</td><td>226.4</td><td>-49.1</td><td>628</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 187 - WARD 10 - MEDIUM</td><td>3.7</td><td></td><td>2</td><td>87.7</td><td>-55.6</td><td>257</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 160 - WARD 10 - MEDIUM</td><td>3.8</td><td></td><td>2</td><td>92.1</td><td>-55.8</td><td>113</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 133 - WARD 9 - HIGH</td><td>6.6</td><td></td><td>3</td><td>159.5</td><td>-60.5</td><td>357</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 152 - WARD 10 - HIGH</td><td>4.8</td><td></td><td>3</td><td>114.4</td><td>-73.8</td><td>279</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 185 - WARD 10 - HIGH</td><td>5.1</td><td></td><td>3</td><td>121.8</td><td>-81.2</td><td>371</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 22 - WARD 9 - HIGH</td><td>4.8</td><td></td><td>4</td><td>114.5</td><td>-86.0</td><td>356</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 146 - WARD 10 - HIGH</td><td>8.3</td><td></td><td>4</td><td>199.7</td><td>-106.2</td><td>421</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 208 - WARD 4 - HIGH</td><td>8.0</td><td></td><td>5</td><td>191.2</td><td>-114.9</td><td>248</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 242 - WARD 3 - LOW</td><td>5.2</td><td></td><td>5</td><td>125.4</td><td>-121.2</td><td>774</td><td><span class='pill away'>away</span></td></tr>
+<tr><td>Zone 217 - WARD 10 - HIGH</td><td>8.4</td><td></td><td>6</td><td>201.5</td><td>-146.0</td><td>817</td><td><span class='pill away'>away</span></td></tr>
 </tbody></table>
 </details>
 
