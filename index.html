@@ -40,9 +40,12 @@ path.away { fill:var(--away); }
 #zoneMap[data-layer="revenue"] path[data-revenue-level="3"] { fill:#72bd91; }
 #zoneMap[data-layer="revenue"] path[data-revenue-level="4"] { fill:#3f9a6d; }
 #zoneMap[data-layer="revenue"] path[data-revenue-level="5"] { fill:#176844; }
-.rebalance-label { display:none; pointer-events:none; text-anchor:middle; dominant-baseline:central; font-size:15px; font-weight:900; paint-order:stroke; stroke:#fff; stroke-width:4px; stroke-linejoin:round; }
+.rebalance-label,.revenue-label { display:none; pointer-events:none; text-anchor:middle; dominant-baseline:central; font-weight:900; paint-order:stroke; stroke:#fff; stroke-width:4px; stroke-linejoin:round; }
+.rebalance-label { font-size:15px; }
+.revenue-label { font-size:12px; fill:#123525; }
 .rebalance-label.add { fill:#0c6840; }
 .rebalance-label.remove { fill:#b3312d; }
+#zoneMap[data-layer="revenue"] .revenue-label { display:block; }
 #zoneMap[data-labels="rebalance"] .rebalance-label { display:block; }
 .legend { display:flex; flex-wrap:wrap; gap:10px 16px; margin-top:10px; color:var(--muted); font-size:14px; }
 .dot { width:12px; height:12px; border-radius:3px; display:inline-block; margin-right:6px; vertical-align:-1px; }
@@ -363,6 +366,198 @@ footer { margin-top:24px; color:var(--muted); font-size:13px; }
 <path d="M 719.6 246.8 L 714.4 244.1 L 704.0 250.2 L 702.3 251.2 L 695.1 255.3 L 689.1 258.9 L 686.5 260.4 L 676.0 266.5 L 687.8 272.6 L 688.8 272.2 L 689.4 271.9 L 690.0 271.6 L 690.5 271.4 L 691.4 271.0 L 692.1 270.7 L 692.8 270.5 L 693.7 270.2 L 696.8 269.5 L 693.2 265.3 L 691.7 263.5 L 691.2 262.9 L 691.8 262.8 L 692.5 262.5 L 692.7 262.5 L 692.8 262.5 L 693.0 262.4 L 696.8 261.3 L 697.9 261.0 L 698.9 261.1 L 700.1 261.1 L 700.0 260.6 L 699.2 259.2 L 698.9 259.3 L 698.7 259.0 L 699.6 256.8 L 700.5 256.9 L 700.6 256.7 L 700.8 256.8 L 701.0 256.8 L 701.1 256.8 L 701.4 256.8 L 701.6 256.8 L 701.7 256.8 L 702.0 256.8 L 702.2 256.8 L 702.3 256.8 L 702.5 256.8 L 702.8 256.7 L 703.0 256.7 L 703.2 256.6 L 703.4 256.6 L 703.5 256.5 L 703.7 256.5 L 703.8 256.4 L 709.0 253.4 L 712.6 255.2 L 713.3 254.8 L 718.3 251.8 L 723.5 248.8 L 723.1 248.6 L 719.6 246.8 Z" class="watch" tabindex="0" data-zone="263" data-revenue-level="0" data-revenue-cents="0" data-rebalance-label=""><title>Zone 263 - WARD 8 - LOW | watch | revenue $0 | avg 2.4 vehicle-hours/day | gap -0.4</title></path>
 <path d="M 378.4 493.8 L 376.8 493.5 L 375.6 493.0 L 374.2 492.6 L 373.2 492.3 L 372.1 492.1 L 371.3 492.0 L 370.5 491.9 L 369.7 491.9 L 368.5 491.8 L 367.6 491.8 L 366.5 492.1 L 365.5 492.5 L 364.7 492.9 L 364.2 493.2 L 364.0 493.5 L 363.9 493.8 L 363.6 494.1 L 363.1 494.4 L 361.9 494.7 L 361.3 494.8 L 359.1 495.3 L 357.1 496.1 L 356.0 496.7 L 354.9 497.2 L 354.0 497.7 L 353.3 498.1 L 352.6 498.4 L 352.1 498.6 L 351.6 498.9 L 350.9 499.3 L 349.8 499.5 L 348.7 499.7 L 347.6 499.8 L 346.5 499.9 L 345.4 499.9 L 344.5 499.8 L 343.5 499.7 L 341.2 499.3 L 340.3 499.0 L 339.3 499.0 L 338.2 498.9 L 336.8 498.8 L 334.7 498.6 L 332.5 498.3 L 331.4 498.2 L 330.0 498.2 L 329.0 498.1 L 328.0 497.9 L 327.2 497.6 L 326.5 497.4 L 326.0 497.1 L 325.6 496.9 L 325.1 496.7 L 324.3 496.5 L 323.5 496.4 L 322.5 496.4 L 325.7 498.0 L 326.4 498.4 L 331.8 501.2 L 332.1 501.3 L 332.8 501.7 L 333.9 502.2 L 342.6 506.8 L 345.0 508.0 L 356.9 514.0 L 358.7 514.9 L 368.2 519.7 L 368.2 519.7 L 375.6 515.0 L 376.4 514.5 L 377.4 513.9 L 377.4 513.9 L 377.4 513.9 L 378.2 513.3 L 380.3 512.0 L 380.9 511.6 L 383.3 510.1 L 383.5 510.0 L 383.5 510.0 L 384.0 509.7 L 386.1 508.4 L 386.1 508.4 L 400.5 515.6 L 400.7 515.7 L 404.0 517.3 L 404.2 517.4 L 406.4 516.0 L 408.3 514.9 L 409.0 514.4 L 410.4 513.6 L 413.0 512.0 L 414.7 510.8 L 416.2 509.9 L 417.6 509.1 L 418.1 508.7 L 419.5 507.9 L 421.9 506.4 L 422.4 506.1 L 422.3 505.9 L 422.4 505.2 L 422.4 504.5 L 422.4 503.6 L 422.4 503.5 L 422.6 503.1 L 422.6 502.9 L 422.8 502.5 L 422.8 502.5 L 422.8 502.5 L 423.0 502.3 L 423.0 502.3 L 423.2 502.1 L 423.2 502.0 L 423.2 502.0 L 423.3 502.0 L 422.1 501.5 L 418.6 500.8 L 418.4 500.8 L 417.2 500.4 L 415.9 500.2 L 415.0 500.2 L 413.8 500.3 L 412.3 500.4 L 411.6 500.4 L 410.9 500.3 L 410.1 500.1 L 409.6 499.9 L 409.2 499.4 L 408.8 499.0 L 408.3 498.8 L 407.7 498.6 L 406.8 498.3 L 406.1 498.2 L 405.4 498.1 L 404.5 498.0 L 403.9 498.1 L 403.1 498.3 L 402.3 498.6 L 401.6 499.0 L 401.2 499.3 L 400.8 499.6 L 400.5 500.0 L 400.1 500.3 L 399.7 500.5 L 399.0 500.7 L 397.9 501.0 L 396.9 501.2 L 396.0 501.3 L 395.1 501.4 L 394.5 501.4 L 393.6 501.3 L 393.0 501.0 L 392.8 500.7 L 392.7 500.5 L 392.8 500.3 L 392.9 500.1 L 393.1 500.0 L 393.8 499.8 L 394.5 499.7 L 395.2 499.5 L 395.7 499.3 L 395.7 498.9 L 395.5 498.7 L 395.1 498.5 L 394.8 498.4 L 394.1 498.3 L 393.4 498.3 L 392.0 498.3 L 390.8 498.1 L 389.4 497.7 L 388.4 497.4 L 387.5 497.2 L 386.4 496.6 L 385.6 496.2 L 385.1 495.8 L 384.8 495.5 L 384.8 495.1 L 384.3 494.7 L 383.8 494.3 L 383.3 494.1 L 382.7 493.8 L 382.5 493.8 L 382.2 493.7 L 381.8 493.6 L 381.0 493.6 L 380.5 493.6 L 379.8 493.7 L 379.1 493.8 L 378.4 493.8 Z" class="watch" tabindex="0" data-zone="264" data-revenue-level="0" data-revenue-cents="0" data-rebalance-label=""><title>Zone 264 - WARD 4 - HIGH | watch | revenue $0 | avg 0.0 vehicle-hours/day | gap 0.3</title></path>
 <path d="M 696.5 112.6 L 681.4 104.9 L 673.5 100.8 L 659.3 93.7 L 643.2 85.5 L 641.9 84.8 L 638.0 87.2 L 632.7 90.4 L 632.6 90.5 L 628.1 93.2 L 623.6 96.0 L 617.3 99.9 L 610.8 103.8 L 610.3 104.1 L 605.4 107.2 L 606.3 107.7 L 607.4 108.2 L 620.1 114.7 L 632.9 121.2 L 636.6 123.1 L 642.5 126.2 L 646.3 128.1 L 653.9 132.0 L 658.7 134.4 L 659.6 134.9 L 660.0 134.7 L 662.4 133.2 L 666.4 130.8 L 670.5 128.3 L 670.7 128.1 L 672.1 127.3 L 674.5 125.8 L 675.3 125.3 L 677.9 123.7 L 678.1 123.8 L 684.9 119.7 L 686.8 118.5 L 687.0 118.4 L 688.6 117.4 L 692.2 115.2 L 696.5 112.6 Z" class="watch" tabindex="0" data-zone="265" data-revenue-level="0" data-revenue-cents="0" data-rebalance-label=""><title>Zone 265 - WARD 10 - MEDIUM | watch | revenue $0 | avg 0.0 vehicle-hours/day | gap -0.0</title></path>
+<text class="revenue-label" x="364.9" y="324.5" data-zone="1">$671</text>
+<text class="revenue-label" x="454.7" y="176.7" data-zone="2">$14</text>
+<text class="revenue-label" x="248.5" y="427.3" data-zone="5">$210</text>
+<text class="revenue-label" x="812.1" y="200.8" data-zone="6">$1.7k</text>
+<text class="revenue-label" x="548.2" y="418.1" data-zone="7">$153</text>
+<text class="revenue-label" x="547.2" y="396.1" data-zone="8">$27</text>
+<text class="revenue-label" x="508.1" y="367.7" data-zone="9">$93</text>
+<text class="revenue-label" x="410.2" y="347.7" data-zone="10">$14</text>
+<text class="revenue-label" x="292.8" y="413.4" data-zone="12">$260</text>
+<text class="revenue-label" x="546.8" y="343.3" data-zone="13">$14</text>
+<text class="revenue-label" x="554.0" y="310.1" data-zone="14">$634</text>
+<text class="revenue-label" x="693.4" y="209.7" data-zone="15">$304</text>
+<text class="revenue-label" x="557.9" y="115.6" data-zone="16">$218</text>
+<text class="revenue-label" x="693.1" y="361.9" data-zone="17">$69</text>
+<text class="revenue-label" x="416.6" y="407.0" data-zone="18">$184</text>
+<text class="revenue-label" x="632.6" y="304.6" data-zone="19">$225</text>
+<text class="revenue-label" x="337.5" y="269.0" data-zone="20">$14</text>
+<text class="revenue-label" x="706.1" y="181.0" data-zone="21">$508</text>
+<text class="revenue-label" x="425.5" y="240.5" data-zone="22">$2.3k</text>
+<text class="revenue-label" x="482.7" y="405.8" data-zone="23">$52</text>
+<text class="revenue-label" x="555.5" y="464.9" data-zone="25">$263</text>
+<text class="revenue-label" x="520.9" y="496.6" data-zone="26">$282</text>
+<text class="revenue-label" x="114.3" y="379.7" data-zone="27">$1.2k</text>
+<text class="revenue-label" x="268.6" y="335.9" data-zone="28">$66</text>
+<text class="revenue-label" x="424.5" y="390.6" data-zone="30">$139</text>
+<text class="revenue-label" x="574.0" y="193.3" data-zone="33">$65</text>
+<text class="revenue-label" x="493.1" y="387.3" data-zone="34">$95</text>
+<text class="revenue-label" x="625.9" y="210.5" data-zone="35">$186</text>
+<text class="revenue-label" x="700.3" y="165.7" data-zone="37">$63</text>
+<text class="revenue-label" x="405.2" y="382.4" data-zone="38">$11</text>
+<text class="revenue-label" x="520.6" y="368.7" data-zone="39">$159</text>
+<text class="revenue-label" x="393.2" y="260.0" data-zone="40">$675</text>
+<text class="revenue-label" x="418.8" y="376.2" data-zone="41">$96</text>
+<text class="revenue-label" x="534.3" y="446.7" data-zone="43">$1.1k</text>
+<text class="revenue-label" x="459.4" y="398.4" data-zone="44">$902</text>
+<text class="revenue-label" x="411.0" y="308.8" data-zone="45">$729</text>
+<text class="revenue-label" x="285.0" y="323.1" data-zone="46">$46</text>
+<text class="revenue-label" x="186.5" y="355.3" data-zone="47">$134</text>
+<text class="revenue-label" x="414.7" y="489.3" data-zone="48">$35</text>
+<text class="revenue-label" x="184.4" y="418.2" data-zone="49">$1.2k</text>
+<text class="revenue-label" x="618.5" y="420.8" data-zone="50">$41</text>
+<text class="revenue-label" x="358.6" y="488.5" data-zone="51">$27</text>
+<text class="revenue-label" x="242.6" y="353.5" data-zone="52">$764</text>
+<text class="revenue-label" x="586.9" y="353.3" data-zone="54">$27</text>
+<text class="revenue-label" x="230.6" y="316.3" data-zone="56">$333</text>
+<text class="revenue-label" x="589.3" y="282.2" data-zone="58">$183</text>
+<text class="revenue-label" x="661.8" y="240.4" data-zone="60">$41</text>
+<text class="revenue-label" x="491.7" y="428.8" data-zone="61">$118</text>
+<text class="revenue-label" x="377.8" y="424.1" data-zone="62">$381</text>
+<text class="revenue-label" x="504.8" y="455.9" data-zone="63">$134</text>
+<text class="revenue-label" x="613.9" y="337.9" data-zone="66">$227</text>
+<text class="revenue-label" x="248.9" y="398.3" data-zone="68">$2.8k</text>
+<text class="revenue-label" x="609.2" y="294.8" data-zone="69">$164</text>
+<text class="revenue-label" x="132.3" y="389.3" data-zone="72">$1.4k</text>
+<text class="revenue-label" x="469.0" y="398.0" data-zone="73">$55</text>
+<text class="revenue-label" x="208.3" y="409.9" data-zone="74">$5.9k</text>
+<text class="revenue-label" x="435.0" y="364.0" data-zone="75">$33</text>
+<text class="revenue-label" x="302.1" y="312.4" data-zone="76">$173</text>
+<text class="revenue-label" x="702.0" y="341.5" data-zone="77">$90</text>
+<text class="revenue-label" x="238.8" y="299.8" data-zone="78">$1.1k</text>
+<text class="revenue-label" x="474.8" y="440.3" data-zone="80">$104</text>
+<text class="revenue-label" x="331.0" y="398.2" data-zone="81">$213</text>
+<text class="revenue-label" x="657.2" y="402.9" data-zone="82">$14</text>
+<text class="revenue-label" x="342.7" y="289.4" data-zone="84">$77</text>
+<text class="revenue-label" x="461.1" y="393.8" data-zone="85">$11</text>
+<text class="revenue-label" x="663.2" y="364.2" data-zone="87">$38</text>
+<text class="revenue-label" x="586.7" y="331.5" data-zone="88">$797</text>
+<text class="revenue-label" x="466.6" y="345.7" data-zone="89">$194</text>
+<text class="revenue-label" x="332.4" y="449.2" data-zone="90">$221</text>
+<text class="revenue-label" x="450.9" y="324.5" data-zone="92">$637</text>
+<text class="revenue-label" x="646.1" y="444.1" data-zone="93">$185</text>
+<text class="revenue-label" x="577.0" y="236.9" data-zone="95">$521</text>
+<text class="revenue-label" x="566.4" y="346.5" data-zone="96">$200</text>
+<text class="revenue-label" x="765.2" y="140.9" data-zone="97">$558</text>
+<text class="revenue-label" x="176.1" y="391.6" data-zone="98">$691</text>
+<text class="revenue-label" x="341.8" y="434.5" data-zone="99">$1.5k</text>
+<text class="revenue-label" x="395.6" y="396.3" data-zone="100">$11</text>
+<text class="revenue-label" x="505.7" y="281.8" data-zone="101">$732</text>
+<text class="revenue-label" x="380.4" y="305.1" data-zone="102">$109</text>
+<text class="revenue-label" x="506.3" y="403.1" data-zone="104">$90</text>
+<text class="revenue-label" x="612.2" y="130.1" data-zone="105">$11</text>
+<text class="revenue-label" x="532.4" y="469.3" data-zone="110">$82</text>
+<text class="revenue-label" x="431.5" y="385.6" data-zone="111">$55</text>
+<text class="revenue-label" x="132.1" y="368.5" data-zone="112">$207</text>
+<text class="revenue-label" x="346.5" y="335.1" data-zone="113">$285</text>
+<text class="revenue-label" x="204.9" y="343.9" data-zone="114">$87</text>
+<text class="revenue-label" x="736.5" y="205.4" data-zone="115">$578</text>
+<text class="revenue-label" x="488.4" y="518.1" data-zone="116">$35</text>
+<text class="revenue-label" x="556.9" y="173.7" data-zone="117">$14</text>
+<text class="revenue-label" x="371.5" y="469.4" data-zone="118">$33</text>
+<text class="revenue-label" x="331.1" y="346.4" data-zone="120">$38</text>
+<text class="revenue-label" x="293.5" y="434.6" data-zone="121">$22</text>
+<text class="revenue-label" x="660.2" y="316.6" data-zone="122">$422</text>
+<text class="revenue-label" x="461.2" y="377.9" data-zone="123">$93</text>
+<text class="revenue-label" x="564.8" y="271.1" data-zone="126">$532</text>
+<text class="revenue-label" x="634.5" y="229.3" data-zone="127">$55</text>
+<text class="revenue-label" x="465.8" y="462.3" data-zone="128">$82</text>
+<text class="revenue-label" x="466.7" y="163.8" data-zone="129">$11</text>
+<text class="revenue-label" x="358.0" y="380.9" data-zone="130">$80</text>
+<text class="revenue-label" x="288.3" y="376.5" data-zone="131">$353</text>
+<text class="revenue-label" x="480.0" y="309.6" data-zone="132">$180</text>
+<text class="revenue-label" x="436.7" y="284.4" data-zone="133">$2.5k</text>
+<text class="revenue-label" x="533.8" y="431.1" data-zone="136">$169</text>
+<text class="revenue-label" x="428.4" y="334.3" data-zone="137">$79</text>
+<text class="revenue-label" x="168.5" y="366.6" data-zone="139">$284</text>
+<text class="revenue-label" x="579.3" y="453.9" data-zone="140">$88</text>
+<text class="revenue-label" x="581.9" y="313.1" data-zone="141">$17k</text>
+<text class="revenue-label" x="782.5" y="212.0" data-zone="142">$493</text>
+<text class="revenue-label" x="282.6" y="425.6" data-zone="143">$52</text>
+<text class="revenue-label" x="531.6" y="327.2" data-zone="145">$194</text>
+<text class="revenue-label" x="459.6" y="217.7" data-zone="146">$2.6k</text>
+<text class="revenue-label" x="452.1" y="422.4" data-zone="148">$69</text>
+<text class="revenue-label" x="495.1" y="357.8" data-zone="149">$123</text>
+<text class="revenue-label" x="579.5" y="438.8" data-zone="150">$33</text>
+<text class="revenue-label" x="506.0" y="240.3" data-zone="152">$1.7k</text>
+<text class="revenue-label" x="449.8" y="491.6" data-zone="154">$79</text>
+<text class="revenue-label" x="482.7" y="383.1" data-zone="155">$22</text>
+<text class="revenue-label" x="414.9" y="470.5" data-zone="156">$43</text>
+<text class="revenue-label" x="796.8" y="242.2" data-zone="157">$14</text>
+<text class="revenue-label" x="429.6" y="414.5" data-zone="158">$66</text>
+<text class="revenue-label" x="656.0" y="154.0" data-zone="160">$599</text>
+<text class="revenue-label" x="257.6" y="434.3" data-zone="161">$805</text>
+<text class="revenue-label" x="431.4" y="404.9" data-zone="162">$14</text>
+<text class="revenue-label" x="406.5" y="520.1" data-zone="163">$27</text>
+<text class="revenue-label" x="422.5" y="455.4" data-zone="165">$246</text>
+<text class="revenue-label" x="357.4" y="238.2" data-zone="167">$33</text>
+<text class="revenue-label" x="687.6" y="377.0" data-zone="169">$25</text>
+<text class="revenue-label" x="539.2" y="377.7" data-zone="170">$14</text>
+<text class="revenue-label" x="605.7" y="320.5" data-zone="172">$296</text>
+<text class="revenue-label" x="150.4" y="377.9" data-zone="174">$1.2k</text>
+<text class="revenue-label" x="208.2" y="426.5" data-zone="175">$422</text>
+<text class="revenue-label" x="222.9" y="332.4" data-zone="176">$90</text>
+<text class="revenue-label" x="578.5" y="483.2" data-zone="177">$612</text>
+<text class="revenue-label" x="220.0" y="436.4" data-zone="178">$142</text>
+<text class="revenue-label" x="410.0" y="413.3" data-zone="179">$109</text>
+<text class="revenue-label" x="314.9" y="358.6" data-zone="180">$150</text>
+<text class="revenue-label" x="584.9" y="207.0" data-zone="181">$82</text>
+<text class="revenue-label" x="533.7" y="182.8" data-zone="183">$11</text>
+<text class="revenue-label" x="595.1" y="367.8" data-zone="184">$66</text>
+<text class="revenue-label" x="784.3" y="182.9" data-zone="185">$3.3k</text>
+<text class="revenue-label" x="419.7" y="196.9" data-zone="187">$1.5k</text>
+<text class="revenue-label" x="367.1" y="404.7" data-zone="188">$14</text>
+<text class="revenue-label" x="390.5" y="459.2" data-zone="190">$144</text>
+<text class="revenue-label" x="158.9" y="403.2" data-zone="191">$1.5k</text>
+<text class="revenue-label" x="801.5" y="219.4" data-zone="192">$169</text>
+<text class="revenue-label" x="433.1" y="394.7" data-zone="194">$93</text>
+<text class="revenue-label" x="282.5" y="282.7" data-zone="195">$57</text>
+<text class="revenue-label" x="579.7" y="412.4" data-zone="196">$488</text>
+<text class="revenue-label" x="574.1" y="389.0" data-zone="197">$27</text>
+<text class="revenue-label" x="390.4" y="356.4" data-zone="198">$175</text>
+<text class="revenue-label" x="759.4" y="196.1" data-zone="199">$1.2k</text>
+<text class="revenue-label" x="470.7" y="412.7" data-zone="203">$52</text>
+<text class="revenue-label" x="254.1" y="288.0" data-zone="205">$52</text>
+<text class="revenue-label" x="306.1" y="467.8" data-zone="206">$325</text>
+<text class="revenue-label" x="538.3" y="507.0" data-zone="207">$22</text>
+<text class="revenue-label" x="513.6" y="483.6" data-zone="208">$1.7k</text>
+<text class="revenue-label" x="412.5" y="292.0" data-zone="209">$438</text>
+<text class="revenue-label" x="621.6" y="384.5" data-zone="212">$35</text>
+<text class="revenue-label" x="375.0" y="369.0" data-zone="214">$241</text>
+<text class="revenue-label" x="685.6" y="251.2" data-zone="215">$372</text>
+<text class="revenue-label" x="609.1" y="172.0" data-zone="216">$27</text>
+<text class="revenue-label" x="746.5" y="157.5" data-zone="217">$5.9k</text>
+<text class="revenue-label" x="441.2" y="397.6" data-zone="220">$14</text>
+<text class="revenue-label" x="835.3" y="286.3" data-zone="221">$22</text>
+<text class="revenue-label" x="485.9" y="476.9" data-zone="222">$315</text>
+<text class="revenue-label" x="261.7" y="447.9" data-zone="226">$1.6k</text>
+<text class="revenue-label" x="191.9" y="445.6" data-zone="227">$14</text>
+<text class="revenue-label" x="640.6" y="350.2" data-zone="228">$148</text>
+<text class="revenue-label" x="693.4" y="232.3" data-zone="230">$454</text>
+<text class="revenue-label" x="672.7" y="331.6" data-zone="231">$142</text>
+<text class="revenue-label" x="511.7" y="337.1" data-zone="232">$55</text>
+<text class="revenue-label" x="317.7" y="300.4" data-zone="234">$973</text>
+<text class="revenue-label" x="444.9" y="404.1" data-zone="236">$1.1k</text>
+<text class="revenue-label" x="470.4" y="264.0" data-zone="237">$1.5k</text>
+<text class="revenue-label" x="544.5" y="221.9" data-zone="238">$2.5k</text>
+<text class="revenue-label" x="204.4" y="374.6" data-zone="239">$1.4k</text>
+<text class="revenue-label" x="541.2" y="258.8" data-zone="241">$13.8k</text>
+<text class="revenue-label" x="599.6" y="401.3" data-zone="242">$4.1k</text>
+<text class="revenue-label" x="385.0" y="220.2" data-zone="243">$850</text>
+<text class="revenue-label" x="237.7" y="421.0" data-zone="244">$4.1k</text>
+<text class="revenue-label" x="605.1" y="221.4" data-zone="245">$174</text>
+<text class="revenue-label" x="185.9" y="335.1" data-zone="246">$164</text>
+<text class="revenue-label" x="529.4" y="292.9" data-zone="247">$110</text>
+<text class="revenue-label" x="603.7" y="464.8" data-zone="248">$101</text>
+<text class="revenue-label" x="504.1" y="197.3" data-zone="250">$694</text>
+<text class="revenue-label" x="149.6" y="357.6" data-zone="251">$673</text>
+<text class="revenue-label" x="167.5" y="346.3" data-zone="253">$224</text>
+<text class="revenue-label" x="452.7" y="407.6" data-zone="254">$413</text>
+<text class="revenue-label" x="449.7" y="539.1" data-zone="255">$14</text>
+<text class="revenue-label" x="461.6" y="418.5" data-zone="256">$129</text>
+<text class="revenue-label" x="661.8" y="192.0" data-zone="258">$1.2k</text>
+<text class="revenue-label" x="517.3" y="443.7" data-zone="259">$373</text>
 <text class="rebalance-label add" x="248.5" y="427.3" data-zone="5">+1</text>
 <text class="rebalance-label remove" x="812.1" y="200.8" data-zone="6">-2</text>
 <text class="rebalance-label add" x="548.2" y="418.1" data-zone="7">+1</text>
@@ -504,7 +699,7 @@ footer { margin-top:24px; color:var(--muted); font-size:13px; }
 </aside>
 </div>
 <div class="legend"><span><span class="dot toward"></span>move toward: 80 zones</span><span><span class="dot watch"></span>watch: 127 zones</span><span><span class="dot away"></span>move away: 58 zones</span></div>
-<p class="note">Tip: click any colored area. Green/red/yellow is the planning view. Revenue layer is darker green where estimated May-June revenue is higher. The + / - labels show how many scooters to add or remove.</p>
+<p class="note">Tip: click any colored area. Green/red/yellow is the planning view. Revenue layer shows estimated May-June dollars directly on the zones. The + / - labels show how many scooters to add or remove.</p>
 </section>
 
 <section class="grid2">
