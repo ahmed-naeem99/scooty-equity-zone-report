@@ -1105,20 +1105,31 @@ document.querySelectorAll('[data-zoom]').forEach(button => {
 });
 let panStart = null;
 zoneMap.addEventListener('pointerdown', (event) => {
-  panStart = { pointerId: event.pointerId, clientX: event.clientX, clientY: event.clientY, x: mapState.x, y: mapState.y };
-  zoneMap.classList.add('panning');
+  const targetPath = event.target.closest ? event.target.closest('path[data-zone]') : null;
+  panStart = { pointerId: event.pointerId, clientX: event.clientX, clientY: event.clientY, x: mapState.x, y: mapState.y, moved: false, targetPath };
   zoneMap.setPointerCapture(event.pointerId);
 });
 zoneMap.addEventListener('pointermove', (event) => {
   if (!panStart) return;
+  const dx = event.clientX - panStart.clientX;
+  const dy = event.clientY - panStart.clientY;
+  if (Math.abs(dx) + Math.abs(dy) <= 4 && !panStart.moved) return;
+  panStart.moved = true;
+  zoneMap.classList.add('panning');
   const rect = zoneMap.getBoundingClientRect();
   const viewScaleX = 920 / rect.width;
   const viewScaleY = 620 / rect.height;
-  mapState.x = panStart.x + (event.clientX - panStart.clientX) * viewScaleX;
-  mapState.y = panStart.y + (event.clientY - panStart.clientY) * viewScaleY;
+  mapState.x = panStart.x + dx * viewScaleX;
+  mapState.y = panStart.y + dy * viewScaleY;
   applyMapTransform();
 });
-const endPan = () => { panStart = null; zoneMap.classList.remove('panning'); };
+const endPan = () => {
+  if (panStart && !panStart.moved && panStart.targetPath) {
+    panStart.targetPath.dispatchEvent(new Event('zone-select'));
+  }
+  panStart = null;
+  zoneMap.classList.remove('panning');
+};
 zoneMap.addEventListener('pointerup', endPan);
 zoneMap.addEventListener('pointercancel', endPan);
 zoneMap.addEventListener('wheel', (event) => {
@@ -1196,6 +1207,7 @@ document.querySelectorAll('#zoneMap path').forEach(path => {
     `;
   };
   path.addEventListener('click', show);
+  path.addEventListener('zone-select', show);
   path.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
