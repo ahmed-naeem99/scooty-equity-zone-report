@@ -50,6 +50,10 @@ path.away { fill:var(--away); }
 #zoneMap[data-layer="revenue"] .revenue-label { display:block; }
 #zoneMap[data-labels="rebalance"] .rebalance-label { display:block; }
 .legend { display:flex; flex-wrap:wrap; gap:10px 16px; margin-top:10px; color:var(--muted); font-size:14px; }
+.legend[hidden] { display:none; }
+.revenue-legend { margin-top:10px; }
+.gradient-bar { height:13px; width:min(420px,100%); border-radius:999px; border:1px solid #cad6cf; background:linear-gradient(90deg,#f2f4f3 0%,#e7f7d8 18%,#bde59b 38%,#62c58b 58%,#27918c 78%,#174f82 100%); }
+.gradient-labels { display:flex; justify-content:space-between; width:min(420px,100%); color:var(--muted); font-size:12px; margin-top:4px; gap:10px; }
 .dot { width:12px; height:12px; border-radius:3px; display:inline-block; margin-right:6px; vertical-align:-1px; }
 .toward.dot,.pill.toward { background:var(--toward); color:white; }
 .watch.dot,.pill.watch { background:var(--watch); color:#312600; }
@@ -706,8 +710,14 @@ footer { margin-top:24px; color:var(--muted); font-size:13px; }
 <p class="note">You will see the zone, recommendation, vehicle-hours, and planning gap here.</p>
 </aside>
 </div>
-<div class="legend"><span><span class="dot toward"></span>move toward: 80 zones</span><span><span class="dot watch"></span>watch: 127 zones</span><span><span class="dot away"></span>move away: 58 zones</span></div>
-<p class="note">Tip: click any colored area. Green/red/yellow is the planning view. Revenue layer shows estimated May-June dollars directly on the zones. The + / - labels show how many scooters to add or remove.</p>
+<div class="legend" data-legend="planning"><span><span class="dot toward"></span>move toward: 80 zones</span><span><span class="dot watch"></span>watch: 127 zones</span><span><span class="dot away"></span>move away: 58 zones</span></div>
+<div class="legend revenue-legend" data-legend="revenue" hidden>
+  <div>
+    <div class="gradient-bar" aria-hidden="true"></div>
+    <div class="gradient-labels"><span>$0</span><span>higher estimated May-June revenue</span><span>$16,974</span></div>
+  </div>
+</div>
+<p class="note" id="mapHint">Tip: click any colored area. Green/red/yellow is the planning view. The + / - labels show how many scooters to add or remove.</p>
 </section>
 
 <section class="grid2">
@@ -1119,6 +1129,12 @@ document.querySelectorAll('[data-layer-button]').forEach(button => {
   button.addEventListener('click', () => {
     zoneMap.dataset.layer = button.dataset.layerButton;
     document.querySelectorAll('[data-layer-button]').forEach(b => b.classList.toggle('active', b === button));
+    document.querySelectorAll('[data-legend]').forEach(legend => {
+      legend.hidden = legend.dataset.legend !== button.dataset.layerButton;
+    });
+    document.getElementById('mapHint').textContent = button.dataset.layerButton === 'revenue'
+      ? 'Revenue layer shows estimated May-June dollars directly on the zones. Darker color means higher estimated revenue.'
+      : 'Tip: click any colored area. Green/red/yellow is the planning view. The + / - labels show how many scooters to add or remove.';
   });
 });
 document.querySelectorAll('[data-label-button]').forEach(button => {
